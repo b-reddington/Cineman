@@ -1,4 +1,5 @@
 //html form elements -- vanilla javascript***
+var possibleTypes = [];
 var possibleGenres = [];
 var possiblePlatforms = [];
 
@@ -10,6 +11,7 @@ var options = {
         'X-RapidAPI-Host': 'watchmode.p.rapidapi.com'
     }
 }
+
 var selectedMovieId;
 
 //variables - parameters
@@ -21,14 +23,33 @@ var selectedPlatforms = [];
 //function -- check if inputs are filled out
 
 //function -- store selected type in a variable
-
+function storeSelectedType() {
+    for (i = 0; i < possibleTypes.length; i++) {
+        if (possibleTypes[i].checked) {
+            selectedType = possibleTypes[i];
+        }
+    };
+};
 
 //function -- store checked genres in an array --> .checked
 //loop through possibleGenres, if .checked is true, then push the value into selectedGenres
+function storeSelectedGenres() {
+    for (i = 0; i < possibleGenres.length; i++) {
+        if (possibleGenres[i].checked) {
+            selectedGenres.push(possibleGenres[i]);
+        }
+    };
+};
 
 //function -- store checked platforms in an array --> .checked
 //loop through possiblePlatforms, if .checked is true, then push the value into selectedPlatforms
-
+function storeSelectedPlatforms() {
+    for (i = 0; i < possiblePlatforms.length; i++) {
+        if (possiblePlatforms[i].checked) {
+            selectedPlatforms.push(possiblePlatforms[i]);
+        }
+    };
+};
 
 //fetch -- get a list of movies & store selected movie into variable
 //function searchTitles() {
@@ -49,6 +70,7 @@ var selectedPlatforms = [];
 
 
 //fetch -- get detailed information about a movie & render onto page
+// searchTitles()
 //var TitleDetailurl = 'https://watchmode.p.rapidapi.com/title/' + selectedMovieId + '/details/?language=EN';
 
 // fetch(TitleDetailurl, options)
