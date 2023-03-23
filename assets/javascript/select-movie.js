@@ -110,16 +110,18 @@ function searchTitles() {
 }
 
 //fetch -- get detailed information about a movie & render onto page
-searchTitles()
-var TitleDetailurl = 'https://watchmode.p.rapidapi.com/title/' + selectedMovieId + '/details/?language=EN';
+function renderShow() {
+    searchTitles()
+    var TitleDetailurl = 'https://watchmode.p.rapidapi.com/title/' + selectedMovieId + '/details/?language=EN';
 
-fetch(TitleDetailurl, options)
-    .then(function(resonse) {
-        return response.json();
-    })
-    .then(function(data) {
-        console.log(data);
-        
-    })
+    fetch(TitleDetailurl, options)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+            
+        })
+}
 
 //click event -- 'submit', render movie onto page
