@@ -8,11 +8,13 @@
     <!--Links Bulma CSS & our local CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
-</head>
+    <title>Cineman</title>
 
+</head>
 <body>
-    <!-- navbar   
+  <header>
+    <h1>Random Movie and Restaurant Generator</h1>
+		 <!-- navbar   
 
 <nav class="navbar has-shadow is-white">
     <div class="navbar-brand">
@@ -45,8 +47,84 @@
         <p class="level-item has-text-centered">
             <a class="link is-info">About</a>
         </p>
-
     </nav>
+		<div class="hero">
+			<h1>Cineman</h1>
+            <p>Your Night In</p>
+            <img src="">
+		</div>
+	</header>
+	<main>
+        <section id="movie-generator">
+            <h2>Movie Generator</h2>
+            <p id="movie-title"></p>
+            <button id="generate-movie-btn">Generate Movie</button>
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>Modal content goes here.</p>
+              </div>
+            </div>
+          </section>
+          <section id="restaurant-generator">
+            <h2>Restaurant Generator</h2>
+            <p id="restaurant-name"></p>
+            <button id="generate-restaurant-btn">Generate Restaurant</button>
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>Modal content goes here.</p>
+              </div>
+            </div>
+          </section>
+          <section id="generate-both">
+              <h2>Generate Both</h2>
+              <p id="Movie/Show and Restaurant"></p>
+              <button id="generate-both-btn">Generate Restaurant</button>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" onclick="closeModal()">&times;</span>
+                  <p>Modal content goes here.</p>
+                </div>
+              </div>
+            </section>
+		<section id="Previous Picks">
+			<h2>Previous Picks</h2>
+			<!-- <p>//add a list of Movies, Shows, Restaurants already watched or ordered from</p> -->
+			<a href="#" class="cta">Last Picked</a> 
+            <!-- maybe add a console.log to keep track? -->
+		</section>
+		<section id="Movies and Shows">
+			<h2>Entertainment and Food</h2>
+			<div class="project">
+				<img src="" id="" alt="">
+				<div class="Description">
+					<!-- <h3>insert movie description
+                    </h3> -->
+					<a href="#">View Selections</a>
+				</div>
+			</div>
+			</div>
+			<a href="#" class="cta">More Options</a>
+		</section>
+		<section id="contact">
+			<h2>Contact Us</h2>
+            <p> Cineman 
+                <p>By Phone: 800.555.5555</p>
+                <p>By E-Mail: info@cineman.com</p>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				<label 
+                input>
+            </label>Message:</label>
+				<textarea id="message"
+                ></textarea>
+                </form>
+            </section>
+   
     <!--Previous pictures box above the two columns that contains a container that contains a thumbnail for the movie, the restaurant, and the date-->
     <div class="box is-full teal py-6">
         <h2><strong>Previous Pairs</strong></h2>
