@@ -26,7 +26,7 @@ var selectedPlatforms = [];
 function storeSelectedType() {
     for (i = 0; i < possibleTypes.length; i++) {
         if (possibleTypes[i].checked) {
-            selectedType = possibleTypes[i];
+            selectedType = possibleTypes[i].value;
         }
     };
 };
@@ -36,7 +36,7 @@ function storeSelectedType() {
 function storeSelectedGenres() {
     for (i = 0; i < possibleGenres.length; i++) {
         if (possibleGenres[i].checked) {
-            selectedGenres.push(possibleGenres[i]);
+            selectedGenres.push(possibleGenres[i].value);
         }
     };
 };
@@ -46,7 +46,7 @@ function storeSelectedGenres() {
 function storeSelectedPlatforms() {
     for (i = 0; i < possiblePlatforms.length; i++) {
         if (possiblePlatforms[i].checked) {
-            selectedPlatforms.push(possiblePlatforms[i]);
+            selectedPlatforms.push(possiblePlatforms[i].value);
         }
     };
 };
