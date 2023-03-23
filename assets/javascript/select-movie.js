@@ -3,6 +3,10 @@ var possibleTypes = [$('#movie'), $('#tv-series')];
 var possibleGenres = [$('#action'), $('#adventure'), $('#animation'), $('#anime'), $('#biography'), $('#comedy'), $('#crime'), $('#documentary'), $('#drama'), $('#family'), $('#fantasy'), $('#food'), $('#game-show'), $('#history'), $('#horror'), $('#kids'), $('#music'), $('#musical'), $('#mystery'), $('#nature'), $('#romance'), $('#sci-fi'), $('#soap'), $('#sports'), $('#thriller'), $('#travel'), $('#western'), ];
 var possiblePlatforms = [$('#hbo-max'), $('#netflix'), $('#hulu'), $('#amazon-prime'), $('#disney-pl'), $('#apple-tv')];
 
+var TypeRadioEl;
+var GenresCheckEl;
+var PlatformsCheckEl;
+
 //variables
 var options = {
     method: 'GET',
@@ -21,6 +25,9 @@ var selectedPlatforms = [];
 
 
 //function -- check if inputs are filled out
+function checkInputs() {
+//if nothing is checked then disable the submit button and send a message
+};
 
 //function -- store selected type in a variable
 function storeSelectedType() {
