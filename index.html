@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,314 @@
     <!--Links Bulma CSS & our local CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <title>Cineman</title>
+
 </head>
 <body>
+  <header>  
+
+<nav class="navbar has-shadow is-white">
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="assets/logo.png" alt="site logo" style="max-height:70px" class="py-1 px-1">
+        </a>
+        <a class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+    <div class="navbar-menu" id="nav-links">
+        <div class="navbar-end is-size-2">
+            <a class="navbar-item">Bookmarks</a>
+            <a class="navbar-item">About</a>
+        </div>
+    </div>
+</nav>
+-->
+<!--Navbar using levels (this is a test)-->
+<nav class="level">
+    <p class="level-item has-text-centered">
+        <img src="assets/logos.png" alt="placeholder img" style="width: 10%;">
+    </p>
+</nav> 
+<!-- Main content area one div for each column totaling 2 columns, using block elements and flex boxes-->
+ <div class="columns">
+    <div class="column is-full-mobile is-half-desktop is-half-tablet green has-text-centered">
+        <div class="box">
+        <form class="block">
+            <label for="movie">Movie</label>
+            <input type="radio" id="movie" value="movie" name="select-type">
+        
+            <label for="tv-series">TV series</label>
+            <input type="radio" id="tv-series" value="tv_series" name="select-type">
+        </form>
+        
+        <form class="block">
+            <label for="action">Action</label>
+            <input type="checkbox" name="genres" id="action" value="1">
+        
+            <label for="adventure">Adventure</label>
+            <input type="checkbox" name="genres" id="adventure" value="2">
+        
+            <label for="animation">Animation</label>
+            <input type="checkbox" name="genres" id="animation" value="3">
+        
+            <label for="anime">Anime</label>
+            <input type="checkbox" name="genres" id="anime" value="33">
+        
+            <label for="biography">Biography</label>
+            <input type="checkbox" name="genres" id="biography" value="31">
+        
+            <label for="comedy">Comedy</label>
+            <input type="checkbox" name="genres" id="comedy" value="4">
+        
+            <label for="crime">Crime</label>
+            <input type="checkbox" name="genres" id="crime" value="5">
+        
+            <label for="documentary">Documentary</label>
+            <input type="checkbox" name="genres" id="documentary" value="6">
+        
+            <label for="drama">Drama</label>
+            <input type="checkbox" name="genres" id="drama" value="7">
+        
+            <label for="family">Family</label>
+            <input type="checkbox" name="genres" id="family" value="8">
+        
+            <label for="fantasy">Fantasy</label>
+            <input type="checkbox" name="genres" id="fantasy" value="9">
+        
+            <label for="food">Food</label>
+            <input type="checkbox" name="genres" id="food" value="34">
+        
+            <label for="game-show">Game Show</label>
+            <input type="checkbox" name="genres" id="game-show" value="28">
+        
+            <label for="history">History</label>
+            <input type="checkbox" name="genres" id="history" value="10">
+        
+            <label for="horror">Horror</label>
+            <input type="checkbox" name="genres" id="horror" value="11">
+        
+            <label for="kids">Kids</label>
+            <input type="checkbox" name="genres" id="kids" value="21">
+        
+            <label for="music">Music</label>
+            <input type="checkbox" name="genres" id="music" value="12">
+        
+            <label for="musical">Musical</label>
+            <input type="checkbox" name="genres" id="musical" value="32">
+        
+            <label for="mystery">Mystery</label>
+            <input type="checkbox" name="genres" id="mystery" value="13">
+        
+            <label for="nature">Nature</label>
+            <input type="checkbox" name="genres" id="nature" value="36">
+        
+            <label for="romance">Romance</label>
+            <input type="checkbox" name="genres" id="romance" value="14">
+        
+            <label for="sci-fi">Sci-fi</label>
+            <input type="checkbox" name="genres" id="sci-fi" value="15">
+        
+            <label for="soap">Soap</label>
+            <input type="checkbox" name="genres" id="soap" value="25">
+        
+            <label for="sports">Sports</label>
+            <input type="checkbox" name="genres" id="sports" value="29">
+        
+            <label for="thriller">Thriller</label>
+            <input type="checkbox" name="genres" id="thriller" value="17">
+        
+            <label for="travel">Travel</label>
+            <input type="checkbox" name="genres" id="travel" value="35">
+        
+            <label for="western">Western</label>
+            <input type="checkbox" name="genres" id="western" value="19">
+        </form>
+        
+        <form class="block">
+            <label for="hbo-max">HBO MAX</label>
+            <input type="checkbox" name="platform" id="hbo-max" value="387">
+        
+            <label for="netflix">Netflix</label>
+            <input type="checkbox" name="platform" id="netflix" value="203">
+        
+            <label for="hulu">Hulu</label>
+            <input type="checkbox" name="platform" id="hulu" value="157">
+        
+            <label for="amazon-prime">Amazon Prime</label>
+            <input type="checkbox" name="platform" id="amazon-prime" value="26">
+        
+            <label for="disney-pl">Disney+</label>
+            <input type="checkbox" name="platform" id="disney-pl" value="372">
+        
+            <label for="apple-tv">AppleTV+</label>
+            <input type="checkbox" name="platform" id="apple-tv" value="371">
+        </form>
+       </div>
+        <div class="box">
+            <p class="py-3"><strong>Movie Title</strong></p>
+            <!--Randomly generated movies-->
+                <div class="columns">
+                    <div class="column is-one-third green">
+                        <div class="box ">
+                            <img src="assets/posterplaceholder.png" alt="placeholder img" style="height: 40%">
+                        </div>
+                    </div>
+                    <div class="column green">
+                        <div class="box">
+                            <div class="columns ">
+                                <div class="column">
+                                    <div class="box">release</div>
+                                    <div class="box">ratings</div>
+                                </div>
+                                <div class="column">
+                                    <div class="box">length</div>
+                                    <div class="box">platform</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box py-6">
+                            Summary
+                        </div>
+                    </div>
+                </div>
+        </div>
+            <div class="buttons is-centered">
+                <button class="button is-success is-medium"> Find Me a Show</button>
+                <button class="button is-success is-medium"> Save Option</button>
+            </div> 
+    </div>
+    <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered">
+        <p><strong>Food recs</strong></p>
+        <div class="box py-6  ">
+            Form to pick food.
+            <div class="buttons is-centered">
+                <button class="button is-success is-medium"> Generate</button>
+            </div>
+        </div>
+        <div class="box py-6">
+            Map
+        </div>
+        <div class=" buttons is-centered">
+            <button class="button is-primary is-medium mx-auto">New Suggestions</button>
+            <button class="button is-link is-medium mx-auto">Previous Orders</button>
+        </div>
+    </div>
+</div>
     
+		<div class="hero">
+            <img src="">
+		</div>
+	</header>
+	<main>
+    <!--Previous pictures box above the two columns that contains a container that contains a thumbnail for the movie, the restaurant, and the date-->
+    <div class="box is-full teal py-6">
+        <h2><strong>Previous Pairs</strong></h2>
+        <div class="block">
+            This will contain a history of pairs.
+        </div>
+    </div>
 
 
+    <!-- Main content area one div for each column totaling 2 columns, using block elements and flex boxes-->
+    <div class="columns">
+        <div class="column is-full-mobile is-half-desktop is-half-tablet green has-text-centered">
+            <p><strong>Movie Recs</strong></p>
+            <!--Randomly generated movies-->
+            <div class="box py-6">
+                Form to choose movies.
+                <div class="buttons is-centered">
+                    <button class="button is-success is-medium"> Generate</button>
+                </div>
+            </div>
+            <div class="box py-6">
+                Previously watched
+            </div>
+        </div>
+        <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered">
 
+
+         <p><strong>Food recs</strong></p>
+            <div class="box py-6  ">
+               <form>
+                    <label for="city and zip code">City, Zip Code:</label>
+                    <input type="text" id="cityandzip" name="cityandzip"><br><br>
+                </form> 
+                <form>
+                  <label for="options">Choose your options:</label><br>
+                  <input type="checkbox" id="american" name="american" value="american">
+                  <label for="American">American</label><br>
+                  <input type="checkbox" id="chinese" name="chinese" value="chinese">
+                  <label for="Chinese">Chinese</label><br>
+                  <input type="checkbox" id="mexican" name="mexican" value="mexican">
+                  <label for="Mexican">Mexican</label><br>
+                  <input type="checkbox" id="japanese" name="japanese" value="japanese">
+                  <label for="Japanese">Japanese</label><br>
+                  <input type="checkbox" id="indian" name="indian" value="indian">
+                  <label for="Indian">Indian</label><br>
+                  <input type="checkbox" id="italian" name="italian" value="italian">
+                  <label for="Italian">Italian</label><br>
+                  <input type="checkbox" id="korean" name="korean" value="korean">
+                  <label for="Korean">Korean</label><br>   
+                </form> 
+                <div class="card">
+                    <div class="card-header is-centered">
+                        <h2>Restaurant & Rating:</h2>                     
+                    </div>
+                    <div class="card-body">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-footer button is-centered">
+                        <button type="button">Order Here</button>
+                    </div>
+                  </div>
+                               
+                <div class="buttons is-centered">
+                    <button class="button is-success is-medium"> Find Me Food</button>
+                </div>
+                <div class="buttons is-centered">
+                    <button class="button is-success is-medium"> Save Option</button>
+                </div>
+            </div>
+            <div class=" buttons is-centered">
+                <button class="button is-primary is-medium mx-auto">New Suggestions</button>
+                <button class="button is-link is-medium mx-auto">Previous Orders</button>
+            </div>
+        </div>
+    </div>
+
+
+	<section id="contact">
+        <h2>Contact Us</h2>
+        <p> Cineman 
+            <p>By Phone: 800.555.5555</p>
+            <p>By E-Mail: info@cineman.com</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label 
+            input>
+        </label>Message:</label>
+            <textarea id="message"
+            ></textarea>
+            </form>
+        </section>
 
     <!--Insert scripts Below this line-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script> 
     <script src="./assets/javascript/script.js"></script>
     <script src="./assets/javascript/select-movie.js"></script>
+
+
 </body>
+
 </html>
