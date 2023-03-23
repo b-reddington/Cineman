@@ -8,14 +8,14 @@ var GenresCheckEl;
 var PlatformsCheckEl;
 
 //variables
+var formComplete = false;
 var options = {
     method: 'GET',
     headers: {
         'X-RapidAPI-Key': '872e03d86emsh692dc8617ff8678p13f059jsn5c1a993e895f',
         'X-RapidAPI-Host': 'watchmode.p.rapidapi.com'
     }
-}
-
+};
 var selectedMovieId;
 
 //variables - parameters
@@ -25,10 +25,10 @@ var selectedPlatforms = [];
 
 
 //function -- check if inputs are filled out
-// function checkInputs() {
-//     //if nothing is checked then disable the submit button and send a message
-//     if ()
-// };
+function checkInputs() {
+    //if one of the form has an input that is not selected then formComplete = false
+    //if all of the form has inputs that are selected, then formComplete = true
+};
 
 //function -- store selected type in a variable
 function storeSelectedType() {
@@ -107,7 +107,7 @@ function searchTitles() {
     
     console.log(selectedMovieId);
     return selectedMovieId;
-}
+};
 
 //fetch -- get detailed information about a movie & render onto page
 function renderShow() {
@@ -122,6 +122,18 @@ function renderShow() {
             console.log(data);
             
         })
-}
+};
 
 //click event -- 'submit', render movie onto page
+$('').on('click', function(event) {
+    event.preventDefault;
+
+    checkInputs();
+    
+    if (formComplete === true) {
+        renderShow();
+    } else {
+        //send a message saying that inputs must be selected;
+        //return
+    }
+});
