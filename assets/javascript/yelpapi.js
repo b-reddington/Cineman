@@ -1,18 +1,10 @@
 function yelpApi() {
     // Set the API endpoint and parameters
-<<<<<<< HEAD
-=======
-    // Request demo access here to bypass cors error https://cors-anywhere.herokuapp.com/corsdemo
->>>>>>> main
     const url = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search';
     const apiKey = 'Bearer dP92CHePjlcDz-ohDw-j69lpyxOZI3K8azTR037qWSHnP85OQO5y4cJktUQF_YIWZtyi6WxzY-gTS3ZbPiqNbNdktWKj5M4CSJUiJKJ733A5ke1PiASRG5uLyDgbZHYx';
     let select = {
         location: 'Long Beach', // Currently hardcoded to Long Beach. Eventually users can select area
-<<<<<<< HEAD
         term: 'restaurants',
-=======
-        term: 'restaurants', // Specifies to the search that you want restaurants
->>>>>>> main
         foods: ['american', 'chinese', 'mexican', 'japanese', 'indian', 'italian', 'korean'],
         limit: 5, // How many results appear
         delivery: 'restaurants_delivery', // Select restaurants that offer delivery
