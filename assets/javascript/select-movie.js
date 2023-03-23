@@ -121,6 +121,9 @@ function renderShow() {
         .then(function(data) {
             console.log(data);
             
+            //render onto divs
+
+            //save to local storage
         })
 };
 
@@ -135,5 +138,5 @@ $('').on('click', function(event) {
     } else {
         //send a message saying that inputs must be selected;
         //return
-    }
+    };
 });
