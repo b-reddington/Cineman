@@ -1,7 +1,7 @@
-//html form elements -- vanilla javascript***
-var possibleTypes = [];
-var possibleGenres = [];
-var possiblePlatforms = [];
+//html form elements -- jquery***
+var possibleTypes = [$('#movie'), $('#tv-series')];
+var possibleGenres = [$('#action'), $('#adventure'), $('#animation'), $('#anime'), $('#biography'), $('#comedy'), $('#crime'), $('#documentary'), $('#drama'), $('#family'), $('#fantasy'), $('#food'), $('#game-show'), $('#history'), $('#horror'), $('#kids'), $('#music'), $('#musical'), $('#mystery'), $('#nature'), $('#romance'), $('#sci-fi'), $('#soap'), $('#sports'), $('#thriller'), $('#travel'), $('#western'), ];
+var possiblePlatforms = [$('#hbo-max'), $('#netflix'), $('#hulu'), $('#amazon-prime'), $('#disney-pl'), $('#apple-tv')];
 
 //variables
 var options = {
@@ -26,7 +26,7 @@ var selectedPlatforms = [];
 function storeSelectedType() {
     for (i = 0; i < possibleTypes.length; i++) {
         if (possibleTypes[i].checked) {
-            selectedType = possibleTypes[i].value;
+            selectedType = possibleTypes[i].val();
         }
     };
 };
@@ -36,7 +36,7 @@ function storeSelectedType() {
 function storeSelectedGenres() {
     for (i = 0; i < possibleGenres.length; i++) {
         if (possibleGenres[i].checked) {
-            selectedGenres.push(possibleGenres[i].value);
+            selectedGenres.push(possibleGenres[i].val());
         }
     };
 };
@@ -46,7 +46,7 @@ function storeSelectedGenres() {
 function storeSelectedPlatforms() {
     for (i = 0; i < possiblePlatforms.length; i++) {
         if (possiblePlatforms[i].checked) {
-            selectedPlatforms.push(possiblePlatforms[i].value);
+            selectedPlatforms.push(possiblePlatforms[i].val());
         }
     };
 };
@@ -57,15 +57,15 @@ function storeSelectedPlatforms() {
     //var genreParam = if only one then selectedGenres[0] else selectedGenres.join('%2C');
     //var platformParam = if only one then selectedPlatforms[0] else selectedPlatforms.join('%2C');
 
-    //var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + typeParam + '&genres=' + genreParam + '&network_ids=' + platformParam + '&sort_by=relevance_desc';
+    //var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + typeParam + '&genres=' + genreParam + '&source_ids=' + platformParam + '&sort_by=relevance_desc';
 
     //fetch(listTitlesurl, options)
         // .then(function(response) {
         //     return response.json();
         // .then(function(data) {
             // console.log(data);
-            // selectedMovieId = data[0].imdb_id;
-        // })
+            // selectedMovieId = data[Math.floor(Math.random() * data.length)].imdb_id;
+        // }
         // })
 
 
