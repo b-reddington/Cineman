@@ -29,3 +29,15 @@ html {
 .teal{
     background-color: teal;
 }
+
+.foodSection {
+    height: 100vh;
+}
+
+#locationForm {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#location {
+    width: 30%;
+}

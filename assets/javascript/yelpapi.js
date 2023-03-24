@@ -33,7 +33,6 @@ function yelpApi() {
         })
         .catch((error) => console.log(error));
 }
-
 $("#generateFood").click(function() {
     yelpApi();
 });
