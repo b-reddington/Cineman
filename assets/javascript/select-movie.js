@@ -123,15 +123,13 @@ function renderShow() {
             //render onto divs
             $('.selected-title').text(selectedTitle);
 
-            $('.card-image').find('img').attr('src', selectedPoster);
+            $('#show-poster').attr('src', selectedPoster);
 
             $('.tv-rating').text(data.us_rating);
             $('.release-yr').text(data.year);
             $('.ratings').text(data.user_rating);
             $('.show-minutes').text(data.runtime_minutes);
-
             $('.show-summary').text(data.plot_overview);
-
         })
 };
 

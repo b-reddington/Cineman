@@ -67,8 +67,5 @@
 .card-content{
     display: flex;
     justify-content: left;
-    align-items: center;
-}
-h4{
-    margin-block: 50px;
+    
 }
