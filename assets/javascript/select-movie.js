@@ -123,7 +123,7 @@ function renderShow() {
             //render onto divs
             $('.selected-title').text(selectedTitle);
 
-            $('.card-image').find('img').attr('src', selectedPoster);
+            $('#show-poster').attr('src', selectedPoster);
 
             $('.tv-rating').text(data.us_rating);
             $('.release-yr').text(data.year);
