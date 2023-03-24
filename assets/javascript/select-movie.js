@@ -27,7 +27,7 @@ var selectedGenres;
 var selectedPlatforms;
 
 
-//function -- check if inputs are filled out
+// //function -- check if inputs are filled out
 // function checkInputs() {
 //     //if all of the form has inputs that are selected, then formComplete = true
 //     if (TypeRadioEl.is(':checked') && GenresCheckEl.is(':checked') && PlatformsCheckEl.is(':checked')) {
@@ -35,12 +35,13 @@ var selectedPlatforms;
 //     }
 // };
 
-//function -- reset form
-function resetSelections() {
-    selectedType = null;
-    selectedGenres = [];
-    selectedPlatforms = null;
-};
+// //function -- reset form
+// function resetSelections() {
+//     selectedType = undefined;
+//     selectedGenres = undefined;
+//     selectedPlatforms = undefined;
+
+// };
 
 //function -- store selected type in a variable
 function storeSelectedType() {
@@ -71,36 +72,24 @@ function storeSelectedGenres() {
 //loop through possiblePlatforms, if .checked is true, then push the value into selectedPlatforms
 function storeSelectedPlatforms() {
     for (i = 0; i < possiblePlatforms.length; i++) {
-        if (possiblePlatforms.is(':checked')) { //change to jquery
+        if (possiblePlatforms[i].is(':checked')) { //this one doesn't work for some reason
                 selectedPlatforms = possiblePlatforms[i].val();
             };
     };
-    
+
     console.log(selectedPlatforms);
     return selectedPlatforms;
 };
 
 //fetch -- get a list of movies & store selected movie into variable
 function searchTitles() {
-    storeSelectedType();
-    storeSelectedGenres();
-    storeSelectedPlatforms();
+    var selectedType = storeSelectedType();
+    var selectedGenres = storeSelectedGenres();
+    var selectedPlatforms = storeSelectedPlatforms();
 
-    var typeParam = selectedType;
-    var genreParam;
-    var platformParam = selectedPlatforms;
 
-    if (selectedGenres.length === 1) {
-        genreParam = selectedGenres[0];
-    } else {
-        genreParam = selectedGenres.join('2%C')
-    };
+    var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + selectedType + '&genres=' + selectedGenres + '&source_ids=' + selectedPlatforms + '&limit=25&sort_by=relevance_desc';
 
-    console.log(typeParam);
-    console.log(genreParam);
-    console.log(platformParam);
-
-    var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + typeParam + '&genres=' + genreParam + '&source_ids=' + platformParam + '&limit=25&sort_by=relevance_desc';
 
     fetch(listTitlesurl, options)
         .then(function(response) {
@@ -108,17 +97,18 @@ function searchTitles() {
         })
         .then(function(data) {
             console.log(data);
-            selectedMovieId = data[Math.floor(Math.random() * data.length)].imdb_id;
+            selectedMovieId = data.titles[Math.floor(Math.random() * data.titles.length)].imdb_id;
+            console.log(selectedMovieId);
+            renderShow();
         });
     
-    console.log(selectedMovieId);
     return selectedMovieId;
 };
 
 //fetch -- get detailed information about a movie & render onto page
 function renderShow() {
-    searchTitles()
     var TitleDetailurl = 'https://watchmode.p.rapidapi.com/title/' + selectedMovieId + '/details/?language=EN';
+    console.log(selectedMovieId);
 
     fetch(TitleDetailurl, options)
         .then(function(response) {
@@ -141,6 +131,7 @@ function renderShow() {
             $('.show-minutes').text(data.runtime_minutes);
 
             $('.show-summary').text(data.plot_overview);
+
         })
 };
 
@@ -149,18 +140,8 @@ $('#find-show').click(function(event) {
     event.preventDefault;
 
     // checkInputs();
-    
-    // if (formComplete === true) {
-    //     renderShow();
-    // } else {
-    //     //send a message saying that inputs must be selected;
-    //     $('#show-parameter').append('<p class="movie-errormsg">You must make a selection!</p>')
-    // };
 
-    renderShow();
-
-    //reset inputs
-    resetSelections();
+    searchTitles();
 });
 
 //click event -- save show to local storage
