@@ -63,12 +63,10 @@ function storeSelectedGenres() {
 //function -- store checked platforms in an array --> .checked
 //loop through possiblePlatforms, if .checked is true, then push the value into selectedPlatforms
 function storeSelectedPlatforms() {
-    for (i = 0; i < possiblePlatforms.length; i++) {
-        if (possiblePlatforms.is(':checked')) { //change to jquery
+    if (possiblePlatforms.is(':checked')) { //change to jquery
             selectedPlatforms.push(possiblePlatforms[i].val());
-        }
-    };
-    
+        };
+        
     console.log(selectedPlatforms);
     return selectedPlatforms;
 };
@@ -81,7 +79,7 @@ function searchTitles() {
 
     var typeParam = selectedType;
     var genreParam;
-    var platformParam;
+    var platformParam = selectedPlatforms;
 
     if (selectedGenres.length === 1) {
         genreParam = selectedGenres[0];
@@ -89,17 +87,11 @@ function searchTitles() {
         genreParam = selectedGenres.join('2%C')
     };
 
-    if (selectedPlatforms.length === 1) {
-        platformParam = selectedPlatforms[0];
-    } else {
-        platformParam = selectedPlatforms.join('%2C');
-    };
-
     console.log(typeParam);
     console.log(genreParam);
     console.log(platformParam);
 
-    var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + typeParam + '&genres=' + genreParam + '&source_ids=' + platformParam + '&sort_by=relevance_desc';
+    var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + typeParam + '&genres=' + genreParam + '&source_ids=' + platformParam + '&limit=25&sort_by=relevance_desc';
 
     fetch(listTitlesurl, options)
         .then(function(response) {
@@ -163,4 +155,11 @@ $('#save-show').on('click', function(event) {
 
     localStorage.setItem('showTitle', selectedTitle);
     localStorage.setItem('showPoster', selectedPoster);
+
+    var savedShow = {
+        showTitle: selectedTitle,
+        showPoster: selectedPoster
+    };
+
+    localStorage.setItem('show', JSON.stringify(savedShow));
 });
