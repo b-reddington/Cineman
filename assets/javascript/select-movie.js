@@ -35,13 +35,11 @@ var selectedPlatforms;
 //     }
 // };
 
-// //function -- reset form
-// function resetSelections() {
-//     selectedType = undefined;
-//     selectedGenres = undefined;
-//     selectedPlatforms = undefined;
-
-// };
+//function -- reset results
+function resetResults() {
+    $('#invalid-msg').css('display', 'none');
+    $('#movie-results').css('display', 'none');
+};
 
 //function -- store selected type in a variable
 function storeSelectedType() {
@@ -171,7 +169,11 @@ function renderShow() {
 $('#find-show').click(function(event) {
     event.preventDefault;
 
-    searchTitles();
+    resetResults();
+
+    setTimeout(function() {
+        searchTitles();
+    }, 50);
 });
 
 //click event -- save show to local storage
