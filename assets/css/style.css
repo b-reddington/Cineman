@@ -15,6 +15,14 @@
 }
 */
 
+#movie-results {
+    display: none;
+}
+
+#invalid-msg {
+    display: none;
+}
+
 .green {
     background-color: green;
 }
