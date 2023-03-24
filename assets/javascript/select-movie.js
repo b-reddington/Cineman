@@ -124,14 +124,21 @@ function renderShow() {
             console.log(data);
             
             //render onto divs
-            // $('').text()
-            // $('').attr('src', data.poster);
+            $('.selected-title').text(data.title);
 
+            $('.card-image').find('img').attr('src', data.poster);
+
+            $('.tv-rating').text(data.us_rating);
+            $('.release-yr').text(data.year);
+            $('.ratings').text(data.user_rating);
+            $('.show-minutes').text(data.runtime_minutes);
+
+            $('.show-summary').text(data.plot_overview);
         })
 };
 
 //click event -- 'submit', render movie onto page
-$('').on('click', function(event) {
+$('#find-show').on('click', function(event) {
     event.preventDefault;
 
     checkInputs();
