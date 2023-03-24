@@ -187,21 +187,55 @@
             </div> 
     </div>
     <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered">
-        <p><strong>Food recs</strong></p>
-        <div class="box py-6  ">
-            Form to pick food.
-            <div class="buttons is-centered">
-                <button class="button is-success is-medium"> Generate</button>
-            </div>
-        </div>
-        <div class="box py-6">
-            Map
-        </div>
-        <div class=" buttons is-centered">
-            <button class="button is-primary is-medium mx-auto">New Suggestions</button>
-            <button class="button is-link is-medium mx-auto">Previous Orders</button>
-        </div>
-    </div>
+
+
+        
+           <div class="box py-6  ">
+              <form>
+                   <label for="city and zip code">City, Zip Code:</label>
+                   <input type="text" id="cityandzip" name="cityandzip"><br><br>
+               </form> 
+               <form>
+                 <label for="options">Choose your options:</label><br>
+                 <input type="checkbox" id="american" name="american" value="american">
+                 <label for="American">American</label><br>
+                 <input type="checkbox" id="chinese" name="chinese" value="chinese">
+                 <label for="Chinese">Chinese</label><br>
+                 <input type="checkbox" id="mexican" name="mexican" value="mexican">
+                 <label for="Mexican">Mexican</label><br>
+                 <input type="checkbox" id="japanese" name="japanese" value="japanese">
+                 <label for="Japanese">Japanese</label><br>
+                 <input type="checkbox" id="indian" name="indian" value="indian">
+                 <label for="Indian">Indian</label><br>
+                 <input type="checkbox" id="italian" name="italian" value="italian">
+                 <label for="Italian">Italian</label><br>
+                 <input type="checkbox" id="korean" name="korean" value="korean">
+                 <label for="Korean">Korean</label><br>   
+               </form> 
+               <div class="card">
+                   <div class="card-header is-centered">
+                       <h2>Restaurant & Rating:</h2>                     
+                   </div>
+                   <div class="card-body">
+                       <img src="" alt="">
+                   </div>
+                   <div class="card-footer button is-centered">
+                       <button type="button">Order Here</button>
+                   </div>
+                 </div>
+                              
+               <div class="buttons is-centered">
+                   <button class="button is-success is-medium"> Find Me Food</button>
+               </div>
+               <div class="buttons is-centered">
+                   <button class="button is-success is-medium"> Save Option</button>
+               </div>
+           </div>
+           <div class=" buttons is-centered">
+               <button class="button is-primary is-medium mx-auto">New Suggestions</button>
+               <button class="button is-link is-medium mx-auto">Previous Orders</button>
+           </div>
+       </div>
 </div>
     
 		<div class="hero">
@@ -216,75 +250,6 @@
             This will contain a history of pairs.
         </div>
     </div>
-
-
-    <!-- Main content area one div for each column totaling 2 columns, using block elements and flex boxes-->
-    <div class="columns">
-        <div class="column is-full-mobile is-half-desktop is-half-tablet green has-text-centered">
-            <p><strong>Movie Recs</strong></p>
-            <!--Randomly generated movies-->
-            <div class="box py-6">
-                Form to choose movies.
-                <div class="buttons is-centered">
-                    <button class="button is-success is-medium"> Generate</button>
-                </div>
-            </div>
-            <div class="box py-6">
-                Previously watched
-            </div>
-        </div>
-        <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered">
-
-
-         <p><strong>Food recs</strong></p>
-            <div class="box py-6  ">
-               <form>
-                    <label for="city and zip code">City, Zip Code:</label>
-                    <input type="text" id="cityandzip" name="cityandzip"><br><br>
-                </form> 
-                <form>
-                  <label for="options">Choose your options:</label><br>
-                  <input type="checkbox" id="american" name="american" value="american">
-                  <label for="American">American</label><br>
-                  <input type="checkbox" id="chinese" name="chinese" value="chinese">
-                  <label for="Chinese">Chinese</label><br>
-                  <input type="checkbox" id="mexican" name="mexican" value="mexican">
-                  <label for="Mexican">Mexican</label><br>
-                  <input type="checkbox" id="japanese" name="japanese" value="japanese">
-                  <label for="Japanese">Japanese</label><br>
-                  <input type="checkbox" id="indian" name="indian" value="indian">
-                  <label for="Indian">Indian</label><br>
-                  <input type="checkbox" id="italian" name="italian" value="italian">
-                  <label for="Italian">Italian</label><br>
-                  <input type="checkbox" id="korean" name="korean" value="korean">
-                  <label for="Korean">Korean</label><br>   
-                </form> 
-                <div class="card">
-                    <div class="card-header is-centered">
-                        <h2>Restaurant & Rating:</h2>                     
-                    </div>
-                    <div class="card-body">
-                        <img src="" alt="">
-                    </div>
-                    <div class="card-footer button is-centered">
-                        <button type="button">Order Here</button>
-                    </div>
-                  </div>
-                               
-                <div class="buttons is-centered">
-                    <button class="button is-success is-medium"> Find Me Food</button>
-                </div>
-                <div class="buttons is-centered">
-                    <button class="button is-success is-medium"> Save Option</button>
-                </div>
-            </div>
-            <div class=" buttons is-centered">
-                <button class="button is-primary is-medium mx-auto">New Suggestions</button>
-                <button class="button is-link is-medium mx-auto">Previous Orders</button>
-            </div>
-        </div>
-    </div>
-
 
 	<section id="contact">
         <h2>Contact Us</h2>

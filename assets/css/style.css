@@ -1,5 +1,31 @@
 html {
     /*    rem * 10
     Example: 1.6rem = 16px */
-    font-size: 62.5%; 
+    /* font-size: 62.5%;  */
+}
+/*
+@media screen and (max-width: 1024px) {
+ #burger{display:none} 
+ .navbar, .navbar-end, .navbar-menu, .navbar-start {
+    align-items: stretch;
+    display: flex;
+}
+ }
+
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+    }
+    #burger{display:flex}
+}
+*/
+
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blueviolet;
+}
+.teal{
+    background-color: teal;
 }
