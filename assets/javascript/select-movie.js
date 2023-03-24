@@ -1,6 +1,6 @@
 //html form elements -- jquery***
 var possibleTypes = [$('#movie'), $('#tv-series')];
-var possibleGenres = [$('#action'), $('#adventure'), $('#animation'), $('#anime'), $('#biography'), $('#comedy'), $('#crime'), $('#documentary'), $('#drama'), $('#family'), $('#fantasy'), $('#food'), $('#game-show'), $('#history'), $('#horror'), $('#kids'), $('#music'), $('#musical'), $('#mystery'), $('#nature'), $('#romance'), $('#sci-fi'), $('#soap'), $('#sports'), $('#thriller'), $('#travel'), $('#western'), ];
+var possibleGenres = [$('#action'), $('#adventure'), $('#animation'), $('#anime'), $('#biography'), $('#comedy'), $('#crime'), $('#documentary'), $('#drama'), $('#family'), $('#fantasy'), $('#food'), $('#game-show'), $('#history'), $('#horror'), $('#kids'), $('#music'), $('#musical'), $('#mystery'), $('#nature'), $('#romance'), $('#sci-fi'), $('#soap'), $('#sports'), $('#thriller'), $('#travel'), $('#western')];
 var possiblePlatforms = [$('#hbo-max'), $('#netflix'), $('#hulu'), $('#amazon-prime'), $('#disney-pl'), $('#apple-tv')];
 
 var TypeRadioEl = $("input[name='select-type']");
@@ -23,16 +23,23 @@ var selectedPoster;
 
 //variables - parameters
 var selectedType;
-var selectedGenres = [];
-var selectedPlatforms = [];
+var selectedGenres;
+var selectedPlatforms;
 
 
 //function -- check if inputs are filled out
-function checkInputs() {
-    //if all of the form has inputs that are selected, then formComplete = true
-    if (TypeRadioEl.is(':checked') && GenresCheckEl.is(':checked') && PlatformsCheckEl.is(':checked')) {
-        formComplete = true;
-    }
+// function checkInputs() {
+//     //if all of the form has inputs that are selected, then formComplete = true
+//     if (TypeRadioEl.is(':checked') && GenresCheckEl.is(':checked') && PlatformsCheckEl.is(':checked')) {
+//         formComplete = true;
+//     }
+// };
+
+//function -- reset form
+function resetSelections() {
+    selectedType = null;
+    selectedGenres = [];
+    selectedPlatforms = null;
 };
 
 //function -- store selected type in a variable
@@ -50,9 +57,9 @@ function storeSelectedType() {
 //function -- store checked genres in an array --> .checked
 //loop through possibleGenres, if .checked is true, then push the value into selectedGenres
 function storeSelectedGenres() {
-    for (i = 0; i < possibleGenres.length; i++) {
+    for (i = 0; i < possibleGenres.length; i++) { //issue
         if (possibleGenres[i].is(':checked')) { //change to jquery
-            selectedGenres.push(possibleGenres[i].val());
+            selectedGenres= possibleGenres[i].val();
         }
     };
     
@@ -63,10 +70,12 @@ function storeSelectedGenres() {
 //function -- store checked platforms in an array --> .checked
 //loop through possiblePlatforms, if .checked is true, then push the value into selectedPlatforms
 function storeSelectedPlatforms() {
-    if (possiblePlatforms.is(':checked')) { //change to jquery
-            selectedPlatforms.push(possiblePlatforms[i].val());
-        };
-        
+    for (i = 0; i < possiblePlatforms.length; i++) {
+        if (possiblePlatforms.is(':checked')) { //change to jquery
+                selectedPlatforms = possiblePlatforms[i].val();
+            };
+    };
+    
     console.log(selectedPlatforms);
     return selectedPlatforms;
 };
@@ -136,21 +145,26 @@ function renderShow() {
 };
 
 //click event -- 'submit', render movie onto page
-$('#find-show').on('submit', function(event) {
+$('#find-show').click(function(event) {
     event.preventDefault;
 
-    checkInputs();
+    // checkInputs();
     
-    if (formComplete === true) {
-        renderShow();
-    } else {
-        //send a message saying that inputs must be selected;
-        $('#show-parameter').append('<p class="movie-errormsg">You must make a selection!</p>')
-    };
+    // if (formComplete === true) {
+    //     renderShow();
+    // } else {
+    //     //send a message saying that inputs must be selected;
+    //     $('#show-parameter').append('<p class="movie-errormsg">You must make a selection!</p>')
+    // };
+
+    renderShow();
+
+    //reset inputs
+    resetSelections();
 });
 
 //click event -- save show to local storage
-$('#save-show').on('click', function(event) {
+$('#save-show').click(function(event) {
     event.preventDefault;
 
     localStorage.setItem('showTitle', selectedTitle);
