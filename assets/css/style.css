@@ -1,8 +1,3 @@
-html {
-    /*    rem * 10
-    Example: 1.6rem = 16px */
-    /* font-size: 62.5%;  */
-}
 /*
 @media screen and (max-width: 1024px) {
  #burger{display:none} 
@@ -20,13 +15,15 @@ html {
 }
 */
 
-.green{
+.green {
     background-color: green;
 }
-.blue{
+
+.blue {
     background-color: blueviolet;
 }
-.teal{
+
+.teal {
     background-color: teal;
 }
 
@@ -38,6 +35,7 @@ html {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 #location {
     width: 30%;
 }
