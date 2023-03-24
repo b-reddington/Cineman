@@ -97,9 +97,15 @@ function searchTitles() {
         })
         .then(function(data) {
             console.log(data);
-            selectedMovieId = data.titles[Math.floor(Math.random() * data.titles.length)].imdb_id;
-            console.log(selectedMovieId);
-            renderShow();
+
+            if (data.titles.length === 0) {
+                $('#invalid-msg').css('display', 'block');
+            } else {
+                $('#movie-results').css('display', 'block');
+                selectedMovieId = data.titles[Math.floor(Math.random() * data.titles.length)].imdb_id;
+                console.log(selectedMovieId);
+                renderShow();
+            }
         });
     
     return selectedMovieId;
@@ -123,21 +129,47 @@ function renderShow() {
             //render onto divs
             $('.selected-title').text(selectedTitle);
 
-            $('#show-poster').attr('src', selectedPoster);
+            if (selectedPoster === "") {
+                $('#show-poster').css('display', 'none');
+            } else {
+                $('#show-poster').attr('src', selectedPoster);
+            };
 
-            $('.tv-rating').text(data.us_rating);
-            $('.release-yr').text(data.year);
-            $('.ratings').text(data.user_rating);
-            $('.show-minutes').text(data.runtime_minutes);
-            $('.show-summary').text(data.plot_overview);
+            if (data.us_rating === "") {
+                $('.tv-rating').css('display', 'none');
+            } else {
+                $('.tv-rating').text(data.us_rating);
+            };
+
+            if (data.year === "") {
+                $('.release-yr').css('display', 'none');
+            } else {
+                $('.release-yr').text(data.year);
+            };
+
+            if (data.user_rating === "") {
+                $('.ratings').css('display', 'none');
+            } else {
+                $('.ratings').text(data.user_rating);
+            };
+
+            if (data.runtime_minutes === '') {
+                $('.show-minutes').css('display', 'none');
+            } else {
+                $('.show-minutes').text(data.runtime_minutes);
+            };
+
+            if (data.plot_overview === '') {
+                $('.show-summary').css('display', 'none');
+            } else {
+                $('.show-summary').text(data.plot_overview);
+            };
         })
 };
 
 //click event -- 'submit', render movie onto page
 $('#find-show').click(function(event) {
     event.preventDefault;
-
-    // checkInputs();
 
     searchTitles();
 });
