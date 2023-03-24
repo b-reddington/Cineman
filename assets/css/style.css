@@ -39,3 +39,10 @@
 #location {
     width: 30%;
 }
+
+.foodResults {
+    height: 500px;
+    width: 300px;
+    text-align: center;
+    margin-left: 185px;
+}
