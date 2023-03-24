@@ -28,18 +28,19 @@ var selectedPlatforms;
 
 
 //function -- check if inputs are filled out
-// function checkInputs() {
-//     //if all of the form has inputs that are selected, then formComplete = true
-//     if (TypeRadioEl.is(':checked') && GenresCheckEl.is(':checked') && PlatformsCheckEl.is(':checked')) {
-//         formComplete = true;
-//     }
-// };
+function checkInputs() {
+    //if all of the form has inputs that are selected, then formComplete = true
+    if (TypeRadioEl.is(':checked') && GenresCheckEl.is(':checked') && PlatformsCheckEl.is(':checked')) {
+        formComplete = true;
+    }
+};
 
 //function -- reset form
 function resetSelections() {
-    selectedType = null;
-    selectedGenres = [];
-    selectedPlatforms = null;
+    selectedType = undefined;
+    selectedGenres = undefined;
+    selectedPlatforms = undefined;
+
 };
 
 //function -- store selected type in a variable
@@ -71,11 +72,11 @@ function storeSelectedGenres() {
 //loop through possiblePlatforms, if .checked is true, then push the value into selectedPlatforms
 function storeSelectedPlatforms() {
     for (i = 0; i < possiblePlatforms.length; i++) {
-        if (possiblePlatforms.is(':checked')) { //change to jquery
+        if (possiblePlatforms.is(':checked')) { //this one doesn't work for some reason
                 selectedPlatforms = possiblePlatforms[i].val();
             };
     };
-    
+
     console.log(selectedPlatforms);
     return selectedPlatforms;
 };
@@ -86,21 +87,7 @@ function searchTitles() {
     storeSelectedGenres();
     storeSelectedPlatforms();
 
-    var typeParam = selectedType;
-    var genreParam;
-    var platformParam = selectedPlatforms;
-
-    if (selectedGenres.length === 1) {
-        genreParam = selectedGenres[0];
-    } else {
-        genreParam = selectedGenres.join('2%C')
-    };
-
-    console.log(typeParam);
-    console.log(genreParam);
-    console.log(platformParam);
-
-    var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + typeParam + '&genres=' + genreParam + '&source_ids=' + platformParam + '&limit=25&sort_by=relevance_desc';
+    var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + selectedType + '&genres=' + selectedGenres + '&source_ids=' + selectedPlatforms + '&limit=25&sort_by=relevance_desc';
 
     fetch(listTitlesurl, options)
         .then(function(response) {
@@ -148,14 +135,18 @@ function renderShow() {
 $('#find-show').click(function(event) {
     event.preventDefault;
 
-    // checkInputs();
+    checkInputs();
     
-    // if (formComplete === true) {
-    //     renderShow();
-    // } else {
-    //     //send a message saying that inputs must be selected;
-    //     $('#show-parameter').append('<p class="movie-errormsg">You must make a selection!</p>')
-    // };
+    if (formComplete === true) {
+        renderShow();
+    } else {
+        //send a message saying that inputs must be selected;
+        $('.movie-errormsg').text('You must make a selection!')
+
+        setTimeout(function() {
+            $('.movie-errormsg').text('');
+        }, 2000)
+    };
 
     renderShow();
 
