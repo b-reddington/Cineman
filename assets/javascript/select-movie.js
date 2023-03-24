@@ -72,7 +72,7 @@ function storeSelectedGenres() {
 //loop through possiblePlatforms, if .checked is true, then push the value into selectedPlatforms
 function storeSelectedPlatforms() {
     for (i = 0; i < possiblePlatforms.length; i++) {
-        if (possiblePlatforms.is(':checked')) { //this one doesn't work for some reason
+        if (possiblePlatforms[i].is(':checked')) { //this one doesn't work for some reason
                 selectedPlatforms = possiblePlatforms[i].val();
             };
     };
@@ -83,22 +83,23 @@ function storeSelectedPlatforms() {
 
 //fetch -- get a list of movies & store selected movie into variable
 function searchTitles() {
-    storeSelectedType();
-    storeSelectedGenres();
-    storeSelectedPlatforms();
+    var selectedType = storeSelectedType();
+    var selectedGenres = storeSelectedGenres();
+    var selectedPlatforms = storeSelectedPlatforms();
+
 
     var listTitlesurl = 'https://watchmode.p.rapidapi.com/list-titles/?types=' + selectedType + '&genres=' + selectedGenres + '&source_ids=' + selectedPlatforms + '&limit=25&sort_by=relevance_desc';
+
 
     fetch(listTitlesurl, options)
         .then(function(response) {
             return response.json();
         })
         .then(function(data) {
-            console.log(data);
-            selectedMovieId = data[Math.floor(Math.random() * data.length)].imdb_id;
+            selectedMovieId = data.titles[Math.floor(Math.random() * data.titles.length)].imdb_id;
+            console.log(selectedMovieId);
         });
     
-    console.log(selectedMovieId);
     return selectedMovieId;
 };
 
