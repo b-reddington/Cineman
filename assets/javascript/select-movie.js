@@ -3,9 +3,9 @@ var possibleTypes = [$('#movie'), $('#tv-series')];
 var possibleGenres = [$('#action'), $('#adventure'), $('#animation'), $('#anime'), $('#biography'), $('#comedy'), $('#crime'), $('#documentary'), $('#drama'), $('#family'), $('#fantasy'), $('#food'), $('#game-show'), $('#history'), $('#horror'), $('#kids'), $('#music'), $('#musical'), $('#mystery'), $('#nature'), $('#romance'), $('#sci-fi'), $('#soap'), $('#sports'), $('#thriller'), $('#travel'), $('#western'), ];
 var possiblePlatforms = [$('#hbo-max'), $('#netflix'), $('#hulu'), $('#amazon-prime'), $('#disney-pl'), $('#apple-tv')];
 
-var TypeRadioEl;
-var GenresCheckEl;
-var PlatformsCheckEl;
+var TypeRadioEl = $("input[name='select-type']");
+var GenresCheckEl = $("input[name='genres']");
+var PlatformsCheckEl = $("input[name='platform']");
 
 //variables
 var formComplete = false;
@@ -26,14 +26,16 @@ var selectedPlatforms = [];
 
 //function -- check if inputs are filled out
 function checkInputs() {
-    //if one of the form has an input that is not selected then formComplete = false
     //if all of the form has inputs that are selected, then formComplete = true
+    if (TypeRadioEl.is(':checked') && GenresCheckEl.is(':checked') && PlatformsCheckEl.is(':checked')) {
+        formComplete = true;
+    }
 };
 
 //function -- store selected type in a variable
 function storeSelectedType() {
     for (i = 0; i < possibleTypes.length; i++) {
-        if ('possibleTypes[i]:checked') { //change to jquery
+        if (possibleTypes[i].is(':checked')) { //change to jquery
             selectedType = possibleTypes[i].val();
         }
     };
@@ -46,7 +48,7 @@ function storeSelectedType() {
 //loop through possibleGenres, if .checked is true, then push the value into selectedGenres
 function storeSelectedGenres() {
     for (i = 0; i < possibleGenres.length; i++) {
-        if ('possibleGenres[i]:checked') { //change to jquery
+        if (possibleGenres[i].is(':checked')) { //change to jquery
             selectedGenres.push(possibleGenres[i].val());
         }
     };
@@ -59,7 +61,7 @@ function storeSelectedGenres() {
 //loop through possiblePlatforms, if .checked is true, then push the value into selectedPlatforms
 function storeSelectedPlatforms() {
     for (i = 0; i < possiblePlatforms.length; i++) {
-        if ('possiblePlatforms[i]:checked') { //change to jquery
+        if (possiblePlatforms.is(':checked')) { //change to jquery
             selectedPlatforms.push(possiblePlatforms[i].val());
         }
     };
@@ -122,8 +124,9 @@ function renderShow() {
             console.log(data);
             
             //render onto divs
+            // $('').text()
+            // $('').attr('src', data.poster);
 
-            //save to local storage
         })
 };
 
@@ -137,6 +140,6 @@ $('').on('click', function(event) {
         renderShow();
     } else {
         //send a message saying that inputs must be selected;
-        //return
+        return
     };
 });
