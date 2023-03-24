@@ -23,7 +23,7 @@
         <!-- Main content area one div for each column totaling 2 columns, using block elements and flex boxes-->
         <div class="columns">
             <div class="column is-full-mobile is-half-desktop is-half-tablet green has-text-centered">
-                <div class="box">
+                <div id="show-parameters" class="box">
                     <form id="type-form" class="block">
                         <label for="movie">Movie</label>
                         <input type="radio" id="movie" value="movie" name="select-type">
@@ -138,7 +138,7 @@
                     <button type="submit" id="find-show" class="button is-success is-medium"> Find Show</button>
                 </div>
         
-                <div class="card">
+                <div id="movie-results" class="card">
                     <header>
                         <h3 class="selected-title">Title</h3>
                     </header>
@@ -160,11 +160,10 @@
                         <h4>Summary</h4>
                         <p class="show-summary"></p>
                     </div>
+
+                    <button id="save-show" class="button is-success is-medium">Save</button>
                 </div>
                 
-                    <div class="buttons is-centered">
-                        <button id="save-show" class="button is-success is-medium">Save</button>
-                    </div> 
             </div>
 
             <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered foodSection">

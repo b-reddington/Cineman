@@ -145,7 +145,7 @@ $('#find-show').on('submit', function(event) {
         renderShow();
     } else {
         //send a message saying that inputs must be selected;
-        return
+        $('#show-parameter').append('<p class="movie-errormsg">You must make a selection!</p>')
     };
 });
 
