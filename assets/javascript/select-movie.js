@@ -18,6 +18,9 @@ var options = {
 };
 var selectedMovieId;
 
+var selectedTitle;
+var selectedPoster;
+
 //variables - parameters
 var selectedType;
 var selectedGenres = [];
@@ -123,10 +126,13 @@ function renderShow() {
         .then(function(data) {
             console.log(data);
             
-            //render onto divs
-            $('.selected-title').text(data.title);
+            selectedTitle = data.title;
+            selectedPoster = data.poster;
 
-            $('.card-image').find('img').attr('src', data.poster);
+            //render onto divs
+            $('.selected-title').text(selectedTitle);
+
+            $('.card-image').find('img').attr('src', selectedPoster);
 
             $('.tv-rating').text(data.us_rating);
             $('.release-yr').text(data.year);
@@ -138,7 +144,7 @@ function renderShow() {
 };
 
 //click event -- 'submit', render movie onto page
-$('#find-show').on('click', function(event) {
+$('#find-show').on('submit', function(event) {
     event.preventDefault;
 
     checkInputs();
@@ -149,4 +155,12 @@ $('#find-show').on('click', function(event) {
         //send a message saying that inputs must be selected;
         return
     };
+});
+
+//click event -- save show to local storage
+$('#save-show').on('click', function(event) {
+    event.preventDefault;
+
+    localStorage.setItem('showTitle', selectedTitle);
+    localStorage.setItem('showPoster', selectedPoster);
 });
