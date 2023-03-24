@@ -129,9 +129,7 @@ function renderShow() {
             $('.release-yr').text(data.year);
             $('.ratings').text(data.user_rating);
             $('.show-minutes').text(data.runtime_minutes);
-
             $('.show-summary').text(data.plot_overview);
-
         })
 };
 

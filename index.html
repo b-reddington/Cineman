@@ -136,35 +136,36 @@
         
                     <button type="submit" id="find-show" class="button is-success is-medium"> Find Show</button>
                     <p class="movie-errormsg"></p>
+                    <div id="movie-results" class="card">
+                        <header>
+                            <h3 class="selected-title is-size-4"></h3>
+                        </header>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="img">
+                                    <img id="show-poster" src="" alt="poster of show">
+                                </div>
+                            </div>
+                            <div class="column card-content is-size-4 has-text-left">
+                                <div class="content-wrapper">
+                                <h4><span class="tv-rating"></span></h4>
+                                <h4><span class="release-yr"></span></h4>
+                                <h4><span class="ratings"></span></h4>
+                                <h4><span class="show-minutes"></span></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block is-size-4">
+                            
+                            <p class="show-summary"></p>
+                        </div>
+    
+                        <button id="save-show" class="button is-success is-medium mb-5">Save</button>
+                    </div>
                 </div>
-        
-                <div id="movie-results" class="card">
-                    <header>
-                        <h3 class="selected-title"></h3>
-                    </header>
-                    <div class="columns">
-                        <div class="column ">
-                            <div class="img">
-                                <img id="show-poster" src="" alt="poster of show">
-                            </div>
-                        </div>
-                        
-                        <div class="column card-content is-size-4 has-text-left">
-                            <div class="content-wrapper">
-                            <h4>Rated: <span class="tv-rating"></span></h4>
-                            <h4>Release: <span class="release-yr"></span></h4>
-                            <h4>Ratings: <span class="ratings"></span></h4>
-                            <h4>Length: <span class="show-minutes"></span></h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block is-size-4">
-                        <h4>Summary</h4>
-                        <p class="show-summary"></p>
-                    </div>
 
-                    <button id="save-show" class="button is-success is-medium mb-5">Save</button>
-                </div>
+        
+                
                 
             </div>
 
