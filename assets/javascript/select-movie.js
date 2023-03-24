@@ -27,21 +27,21 @@ var selectedGenres;
 var selectedPlatforms;
 
 
-//function -- check if inputs are filled out
-function checkInputs() {
-    //if all of the form has inputs that are selected, then formComplete = true
-    if (TypeRadioEl.is(':checked') && GenresCheckEl.is(':checked') && PlatformsCheckEl.is(':checked')) {
-        formComplete = true;
-    }
-};
+// //function -- check if inputs are filled out
+// function checkInputs() {
+//     //if all of the form has inputs that are selected, then formComplete = true
+//     if (TypeRadioEl.is(':checked') && GenresCheckEl.is(':checked') && PlatformsCheckEl.is(':checked')) {
+//         formComplete = true;
+//     }
+// };
 
-//function -- reset form
-function resetSelections() {
-    selectedType = undefined;
-    selectedGenres = undefined;
-    selectedPlatforms = undefined;
+// //function -- reset form
+// function resetSelections() {
+//     selectedType = undefined;
+//     selectedGenres = undefined;
+//     selectedPlatforms = undefined;
 
-};
+// };
 
 //function -- store selected type in a variable
 function storeSelectedType() {
@@ -96,8 +96,10 @@ function searchTitles() {
             return response.json();
         })
         .then(function(data) {
+            console.log(data);
             selectedMovieId = data.titles[Math.floor(Math.random() * data.titles.length)].imdb_id;
             console.log(selectedMovieId);
+            renderShow();
         });
     
     return selectedMovieId;
@@ -105,8 +107,8 @@ function searchTitles() {
 
 //fetch -- get detailed information about a movie & render onto page
 function renderShow() {
-    searchTitles()
     var TitleDetailurl = 'https://watchmode.p.rapidapi.com/title/' + selectedMovieId + '/details/?language=EN';
+    console.log(selectedMovieId);
 
     fetch(TitleDetailurl, options)
         .then(function(response) {
@@ -129,6 +131,7 @@ function renderShow() {
             $('.show-minutes').text(data.runtime_minutes);
 
             $('.show-summary').text(data.plot_overview);
+
         })
 };
 
@@ -136,23 +139,9 @@ function renderShow() {
 $('#find-show').click(function(event) {
     event.preventDefault;
 
-    checkInputs();
-    
-    if (formComplete === true) {
-        renderShow();
-    } else {
-        //send a message saying that inputs must be selected;
-        $('.movie-errormsg').text('You must make a selection!')
+    // checkInputs();
 
-        setTimeout(function() {
-            $('.movie-errormsg').text('');
-        }, 2000)
-    };
-
-    renderShow();
-
-    //reset inputs
-    resetSelections();
+    searchTitles();
 });
 
 //click event -- save show to local storage
