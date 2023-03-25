@@ -151,13 +151,13 @@ function renderShow() {
                 $('.ratings').text(data.user_rating);
             };
 
-            if (data.runtime_minutes === '') {
-                $('.show-minutes').css('display', 'none');
+            if (data.runtime_minutes === null) {
+                $('.runtime').css('display', 'none');
             } else {
                 $('.show-minutes').text(data.runtime_minutes);
             };
 
-            if (data.plot_overview === '') {
+            if (data.plot_overview === null) {
                 $('.show-summary').css('display', 'none');
             } else {
                 $('.show-summary').text(data.plot_overview);
@@ -173,7 +173,14 @@ $('#find-show').click(function(event) {
 
     setTimeout(function() {
         searchTitles();
-    }, 50);
+    }, 3000);
+});
+
+//click event -- uncheck options
+$('#uncheck').click(function(event) {
+    event.preventDefault;
+
+    $('input[type=radio]').prop('checked', false);
 });
 
 //click event -- save show to local storage
