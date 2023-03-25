@@ -223,8 +223,11 @@
                             </div>
                         </div>
                     </form>
-        
-                    <button type="submit" id="find-show" class="button is-success is-medium">Find Me a Show</button>
+                    
+                    <div class="field is-grouped">
+                        <button type="submit" id="find-show" class="button is-success is-medium">Find Me a Show</button>
+                        <button id="uncheck" class="button is-success is-medium">Clear Selections</button>
+                    </div>
 
                     <div id="movie-results" class="card">
                         <header>
@@ -243,11 +246,13 @@
                                         <h4><span class="release-yr"></span></h4>
                                         <h4><span class="ratings"></span>/10</h4>
                                     </div>
+
                                     <div class="column has-text-centered">
                                         <h4>Rated <span class="tv-rating"></span></h4>
-                                        <h4><span class="show-minutes"></span> minutes</h4>
+                                        <h4 class="runtime"><span class="show-minutes"></span> minutes</h4>
                                     </div>
                                 </div>
+
                                 <div class="block">
                                     <p class="show-summary"></p>
                                 </div>
