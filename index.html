@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--Links Bulma CSS & our local CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -17,12 +18,12 @@
         <!--Navbar using levels (this is a test)-->
         <nav class="level">
             <p class="level-item has-text-centered">
-                <img src="assets/logos.png" alt="placeholder img" style="width: 10%;">
+                <img src="assets/logos.png" alt="poster of show" style="width: 10%;">
             </p>
         </nav>
         <!-- Main content area one div for each column totaling 2 columns, using block elements and flex boxes-->
         <div class="columns">
-            <div class="column is-full-mobile is-half-desktop is-half-tablet green has-text-centered">
+            <div class="column is-full-mobile is-half-desktop is-half-tablet green">
                 <div id="show-parameters" class="box">
                     <form id="type-form" class="block">
                         <div>
@@ -183,7 +184,7 @@
                         </div>
                     </form>
                 
-                    <form id="platform-form" >
+                    <form id="platform-form" class="block">
                         <h3>Pick a streaming service:</h3>
 
                         <div class="platform-input columns">
@@ -223,11 +224,11 @@
                         </div>
                     </form>
         
-                    <button type="submit" id="find-show" class="button is-success is-medium"> Find Show</button>
+                    <button type="submit" id="find-show" class="button is-success is-medium">Find Me a Show</button>
 
                     <div id="movie-results" class="card">
                         <header>
-                            <h3 class="selected-title is-size-4"></h3>
+                            <h3 class="selected-title"></h3>
                         </header>
                         <div class="columns">
                             <div class="column">
@@ -235,36 +236,42 @@
                                     <img id="show-poster" src="" alt="poster of show">
                                 </div>
                             </div>
-                            <div class="column card-content is-size-4 has-text-left">
-                                <div class="content-wrapper">
-                                <h4><span class="tv-rating"></span></h4>
-                                <h4><span class="release-yr"></span></h4>
-                                <h4><span class="ratings"></span></h4>
-                                <h4><span class="show-minutes"></span></h4>
+
+                            <div class="column card-content has-text-left">
+                                <div class="columns">
+                                    <div class="column has-text-centered">
+                                        <h4><span class="release-yr"></span></h4>
+                                        <h4><span class="ratings"></span></h4>
+                                    </div>
+                                    <div class="column has-text-centered">
+                                        <h4><span class="tv-rating"></span></h4>
+                                        <h4><span class="show-minutes"></span></h4>
+                                    </div>
+                                </div>
+                                <div class="block">
+                                    <p class="show-summary"></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="block is-size-4">
-                            
-                            <p class="show-summary"></p>
-                        </div>
-    
-                        <button id="save-show" class="button is-success is-medium mb-5">Save</button>
+
+                        <footer>
+                            <p><span>Results brought to you by:</span> <a href="https://www.watchmode.com/">Watchmode</a></p>
+
+                            <button id="save-show" class="button is-success is-medium mb-5">Save</button>
+                        </footer>
                     </div>
 
                     <div id="invalid-msg" class="card">
-                        <header>
-                            <h3>Error: no results</h3>
-                        </header>
-                        <div class="card-content">
-                            <p>Please make a new selection and search again!</p>
+                        <div class="card-content columns">
+                            <div class="column is-one-quarter">
+                                <!-- can we put in an error icon in here? -->
+                            </div>
+                            <div class="column has-text-left">
+                                <p>It seems that there are no shows that match your criteria. Please try again!</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-        
-                
-                
             </div>
 
             <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered foodSection">
