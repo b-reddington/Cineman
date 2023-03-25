@@ -173,7 +173,7 @@ $('#find-show').click(function(event) {
 
     setTimeout(function() {
         searchTitles();
-    }, 50);
+    }, 2500);
 });
 
 //click event -- save show to local storage
