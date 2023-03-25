@@ -15,21 +15,32 @@
 }
 */
 #type-form {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     padding: 15px;
     justify-content: space-evenly;
 }
 
-#platform-form {
-    border: 1px solid cyan;
-    padding: 15px;
-    display: flex;
-}
-
 #type-form label, #genre-form label, #platform-form label{
     margin-left: 5px;
 }
+
+#genre-form {
+    /* border: 1px solid magenta; */
+    padding: 15px;
+}
+
+#platform-form {
+    /* border: 1px solid cyan; */
+    padding: 15px;
+}
+
+#genre-form h3,
+#platform-form h3 {
+    margin-bottom: 10px;
+}
+
+
 
 
 #movie-results {
