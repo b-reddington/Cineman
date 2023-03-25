@@ -63,6 +63,15 @@
     max-width: auto;
 }
 
+#movie-results .watch-trailer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#movie-results .trailer-link {
+    color: inherit;
+}
+
 #movie-results footer {
     margin-top: 45px;
 }
