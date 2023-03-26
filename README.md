@@ -22,7 +22,7 @@ Cineman is a one-stop-shop for anyone looking to make the perfect movie and meal
 
 ## Installation
 For the time being, follow the link provided to enter our website and begin easily finding your next movie and meal. 
-http://127.0.0.1:5500/index.html. No particular tools or software are required to run this website at this time. 
+https://b-reddington.github.io/Cineman/. No particular tools or software are required to run this website at this time. 
 
 ## Credits
 [Brandon Reddington](https://github.com/b-reddington)
@@ -34,3 +34,5 @@ http://127.0.0.1:5500/index.html. No particular tools or software are required t
 
 
 ## Deployment
+
+https://b-reddington.github.io/Cineman/
