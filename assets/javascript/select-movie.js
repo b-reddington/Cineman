@@ -166,7 +166,7 @@ function renderShow() {
 };
 
 //click event -- 'submit', render movie onto page
-$('#find-show').click(function(event) {
+$('#generate').click(function(event) {
     event.preventDefault;
 
     resetResults();
