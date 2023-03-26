@@ -182,6 +182,16 @@ $('#find-show').click(function(event) {
     }, 3000);
 });
 
+$('#generatePair').click(function(event) {
+    event.preventDefault;
+
+    resetResults();
+
+    setTimeout(function() {
+        searchTitles();
+    }, 3000);
+});
+
 //click event -- uncheck options
 $('#uncheck').click(function(event) {
     event.preventDefault;

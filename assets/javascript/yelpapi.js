@@ -45,7 +45,11 @@ function yelpApi() {
             let navButton = $("<button>");
             navButton.text("Order from Here");
             navButton.attr("id", "order");
-            navButton.attr("class", "button is-centered is-success is-small")
+
+            navButton.attr("class", "button is-centered is-success is-medium")
+
+
+
             $(".afterBtns").append(navButton)
             $('#order').click(function () {
                 window.open(business.url, '_blank');
@@ -62,7 +66,9 @@ function yelpApi() {
             let saveButton = $("<button>");
             saveButton.text("Save Results");
             saveButton.attr("id", "saveFood");
-            saveButton.attr("class", "button is-centered is-success is-small");
+
+            saveButton.attr("class", "button is-centered is-success is-medium");
+
             $(".afterBtns").append(saveButton)
             $("#saveFood").click(function () {
                 localStorage.setItem('Generated Food', stringInfo);
@@ -72,9 +78,15 @@ function yelpApi() {
         .catch((error) => console.log(error));
 }
 
-$("#generateFood").click(function () {
+
+$("#generatePair").click(function () {
     $(".foodResults img").remove(); // remove images when searcching for new restaurants to avoid creating multiple images
+    $("#saveFood").remove();
+    $('.foodResults').css('display', 'block');
+    yelpApi();
+
     $("#order").remove(); // remove button to avoid duplicate buttons from appearing
     $("#saveFood").remove(); // remove button to avoid duplicate buttons from appearing
     yelpApi();
+
 });
