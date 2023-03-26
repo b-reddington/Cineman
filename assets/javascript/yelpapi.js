@@ -6,7 +6,7 @@ function yelpApi() {
         location: $("#location").val().trim(), // Grabs the location of an area the user types in
         foods: ['american', 'chinese', 'mexican', 'japanese', 'indian', 'italian', 'korean'],
         foodSplit: [],
-        limit: 1, // How many results appear
+        limit: 15, // How many results to fetch
         delivery: 'restaurants_delivery', // Select restaurants that offer delivery
     }
 
@@ -26,30 +26,30 @@ function yelpApi() {
     &categories=${selectedFoods} // Selects what type of food you prefer
     &location=${select.location} // Selects restaurants near the designated address
     &attributes=${select.delivery} // Select only restaurants that deliver
-    &limit=${select.limit}`, { // Select 1 restaurant from the list
+    &limit=${select.limit}`, { // Select 10 restaurants from the list
         headers: {
             Authorization: apiKey,
         },
     })
         .then((response) => response.json())
         .then((data) => {
-            // Print the names of the businesses that were retrieved
-            data.businesses.forEach((business) => {
-                console.log(
-                    "Name: " + business.name + // Displays Business Name
-                    "\nRating: " + business.rating + // Displays Selected Business Rating
-                    "\nPrice Range: " + business.price + // Displays Selected Business Price Range
-                    "\nCategories: " + JSON.stringify(select.foods) + // Displays categories of business
-                    "\nImg URL: " + business.image_url + // Displays a featured image URL from the business
-                    "\nAddress: " + JSON.stringify(business.location) + // Displays the address of a business
-                    "\nYelp Link: " + business.url); // Displays the link to the yelp business
-                $(".foodResults").prepend("<img id='foodImg' src='" + business.image_url + "'>"); // Inserts an image from Yelp Object
-                $("#restaurantName").text(business.name); // Displays Business Name
-                $("#restaurantType").text(selectedFoods);  // Displays Selected Business Rating
-                $("#restaurantRating").text("Rating: " + business.rating + "/5");  // Displays Selected Business Rating
-                $("#restaurantPrice").text("Average Price: " + business.price); // Displays Selected Business Price Range
-                console.log(selectedFoods)
-            });
+            // Randomly pick one restaurant from the list
+            const randomIndex = Math.floor(Math.random() * data.businesses.length);
+            const business = data.businesses[randomIndex];
+            console.log(
+                "Name: " + business.name + // Displays Business Name
+                "\nRating: " + business.rating + // Displays Selected Business Rating
+                "\nPrice Range: " + business.price + // Displays Selected Business Price Range
+                "\nCategories: " + JSON.stringify(select.foods) + // Displays categories of business
+                "\nImg URL: " + business.image_url + // Displays a featured image URL from the business
+                "\nAddress: " + JSON.stringify(business.location) + // Displays the address of a business
+                "\nYelp Link: " + business.url); // Displays the link to the yelp business
+            $(".foodResults").prepend("<img id='foodImg' src='" + business.image_url + "'>"); // Inserts an image from Yelp Object
+            $("#restaurantName").text(business.name); // Displays Business Name
+            $("#restaurantType").text(selectedFoods);  // Displays Selected Business Rating
+            $("#restaurantRating").text("Rating: " + business.rating + "/5");  // Displays Selected Business Rating
+            $("#restaurantPrice").text("Average Price: " + business.price); // Displays Selected Business Price Range
+            console.log(selectedFoods);
         })
         .catch((error) => console.log(error));
 }
