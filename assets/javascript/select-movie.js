@@ -175,7 +175,15 @@ $('#generate').click(function(event) {
         searchTitles();
     }, 50);
 });
+$('#generateMovie').click(function(event) {
+    event.preventDefault;
+    console.log("regen")
+    resetResults();
 
+    setTimeout(function() {
+        searchTitles();
+    }, 50);
+});
 //click event -- save show to local storage
 $('#save-show').click(function(event) {
     event.preventDefault;
