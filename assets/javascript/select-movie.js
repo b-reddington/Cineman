@@ -181,6 +181,7 @@ $('#find-show').click(function(event) {
         searchTitles();
     }, 3000);
 });
+
 $('#generatePair').click(function(event) {
     event.preventDefault;
 
@@ -190,6 +191,7 @@ $('#generatePair').click(function(event) {
         searchTitles();
     }, 3000);
 });
+
 //click event -- uncheck options
 $('#uncheck').click(function(event) {
     event.preventDefault;

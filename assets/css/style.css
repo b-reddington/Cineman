@@ -15,6 +15,38 @@
 }
 */
 
+/* movie section edits by Grace */
+#type-form {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#type-form, #genre-form, #platform-form {
+    padding: 15px;
+    margin-bottom: 5px;
+}
+
+#type-form label, #genre-form label, #platform-form label{
+    margin-left: 5px;
+}
+
+#genre-form h3,
+#platform-form h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#find-show, #uncheck {
+    display: block;
+    margin: 20px auto 5px;
+}
+
+#movie-results, #invalid-msg {
+    padding: 35px;
+    margin-top: 45px;
+}
+
 #movie-results {
     display: none;
     
@@ -25,9 +57,57 @@ body{
 html{
     background-color: rgb(66, 135, 245);
 }
+
+/*
+#movie-results header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#movie-results #show-poster {
+    display: block;
+    margin: 0 auto;
+    max-height: 300px;
+    max-width: auto;
+}
+
+#movie-results .watch-trailer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#movie-results .trailer-link {
+    color: inherit;
+}
+
+#movie-results footer {
+    margin-top: 45px;
+}
+
+#movie-results footer p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#movie-results footer a {
+    color: inherit;
+}
+
+#movie-results footer #save-show {
+    display: block;
+    margin: 0 auto;
+}
+*/
 #invalid-msg {
     display: none;
+    text-align: center;
 }
+
+#invalid-msg .card-content {
+    padding: 0;
+}
+
+/* end of edits by Grace */
 
 .green {
     background-color: green;
@@ -64,6 +144,7 @@ html{
 
 .foodResults h3 {
     font-size: 20px;
+/*
 }
 .img{
     height: 300px;
@@ -90,4 +171,4 @@ html{
     border-radius: 50%;
 }
 
-
+*/

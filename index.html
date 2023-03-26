@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--Links Bulma CSS & our local CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -17,6 +18,7 @@
         <!--Navbar using levels (this is a test)-->
         <nav class="level is-fixed-top py-5">
             <p class="level-item has-text-centered">
+
                 <img src="assets/finalLogo.png" class="logoImage" alt="placeholder img" style="width: 15%;">
             </p>
         </nav>
@@ -25,6 +27,7 @@
     <div class="container">
         <div class="columns is-centered is-mobile">
             <div class="column is-mobile bgColor is-flex">
+
                 <div id="show-parameters" class="box">
                     <form id="type-form" class="block">
                         <div>
@@ -88,6 +91,7 @@
                                     <label for="drama"> Drama</label>
                                 </div>
                             </div>
+
                             <div class="column">
                                 <div>
                                     <input type="radio" name="genres" id="family" value="8">
@@ -192,6 +196,8 @@
                                 <div>
                                     <input type="radio" name="platform" id="hbo-max" value="387">
                                     <label for="hbo-max">HBO MAX</label>
+
+<!--
                                 </div>
 
                                 <div>
@@ -227,6 +233,80 @@
                     <div class="field is-grouped">
                         <button type="submit" id="find-show" class="button is-success is-medium">Find Me a Show</button>
                         <button id="uncheck" class="button is-success is-medium">Clear Selections</button>
+                    </div>  
+
+                    <div id="movie-results" class="card">
+                        <header>
+                            <h3 class="selected-title"></h3>
+                        </header>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="img">
+                                    <img id="show-poster" src="" alt="poster of show">
+-->
+                                </div>
+
+                                <div>
+                                    <input type="radio" name="platform" id="netflix" value="203">
+                                    <label for="netflix">Netflix</label>
+                                </div>                        
+                            </div>
+
+
+                            <div class="column">                        
+                                <div>
+                                    <input type="radio" name="platform" id="hulu" value="157">
+                                    <label for="hulu">Hulu</label>
+                                </div>
+
+                                <input type="radio" name="platform" id="amazon-prime" value="26">
+                                <label for="amazon-prime">Amazon Prime</label>
+                            </div>
+
+                            <div class="column">
+                                <div>
+                                    <input type="radio" name="platform" id="disney-pl" value="372">
+                                    <label for="disney-pl">Disney+</label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" name="platform" id="apple-tv" value="371">
+                                    <label for="apple-tv">AppleTV+</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="field is-grouped">
+                        <button type="submit" id="find-show" class="button is-success is-medium">Find Me a Show</button>
+                        <button id="uncheck" class="button is-success is-medium">Clear Selections</button>
+<!--
+                            <div class="column card-content has-text-left">
+                                <div class="columns">
+                                    <div class="column has-text-centered">
+                                        <h4><span class="release-yr"></span></h4>
+                                        <h4 class="rated"><span class="ratings"></span>/10</h4>
+                                    </div>
+
+                                    <div class="column has-text-centered">
+                                        <h4>Rated <span class="tv-rating"></span></h4>
+                                        <h4 class="runtime"><span class="show-minutes"></span> minutes</h4>
+                                    </div>
+                                </div>
+
+                                <div class="block">
+                                    <p class="watch-trailer">Watch the trailer <a class="trailer-link" href="" target="_blank">here</a>.</p>
+                                    <p class="show-summary"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer>
+                            <p><span>Results brought to you by:</span> <a href="https://www.watchmode.com/">Watchmode</a></p>
+
+                            <button id="save-show" class="button is-success is-medium mb-5">Save</button>
+                        </footer>
+-->
                     </div>
 
                     
@@ -248,19 +328,19 @@
                 <div class="box py-6">
                     <form id="foodChoices">
                         <h3>Choose your options:</h3>
-                        <input type="checkbox" id="american" name="american" value="american">
+                        <input type="radio" id="american" name="foodChoice" value="american">
                         <label for="american">American</label>
-                        <input type="checkbox" id="chinese" name="chinese" value="chinese">
-                        <label for="chinese">Chinese</label>
-                        <input type="checkbox" id="mexican" name="mexican" value="mexican">
+                        <input type="radio" id="chinese" name="foodChoice" value="chinese">
+                        <wlabel for="chinese">Chinese</wlabel>
+                        <input type="radio" id="mexican" name="foodChoice" value="mexican">
                         <label for="mexican">Mexican</label>
-                        <input type="checkbox" id="japanese" name="japanese" value="japanese">
+                        <input type="radio" id="japanese" name="foodChoice" value="japanese">
                         <label for="japanese">Japanese</label>
-                        <input type="checkbox" id="indian" name="indian" value="indian">
+                        <input type="radio" id="indian" name="foodChoice" value="indian">
                         <label for="indian">Indian</label>
-                        <input type="checkbox" id="italian" name="italian" value="italian">
+                        <input type="radio" id="italian" name="foodChoice" value="italian">
                         <label for="italian">Italian</label>
-                        <input type="checkbox" id="korean" name="korean" value="korean">
+                        <input type="radio" id="korean" name="foodChoice" value="korean">
                         <label for="korean">Korean</label>
                     </form>
                     <form id="locationForm">
@@ -269,6 +349,7 @@
                     </form>
                     <div class="buttons is-centered">
                         <button class="button is-success is-medium" id="generateFood"> Find Me Food</button>
+
                     </div>
                 </div>
             </div>
