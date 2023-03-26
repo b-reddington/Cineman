@@ -244,32 +244,32 @@
                 </div>
             </div>
                 
-                <div class="column is-mobile bgColor has-text-centered is-flex">
-                    <div class="box" >
-                        <form id="foodChoices" class="block">
-                            <h3 class="is-size-2 py-1">Food Criteria:</h3>
-                            
-                            <label for="american"><input type="checkbox" id="american" name="american" value="american">American</label>
-                            <label for="chinese"><input type="checkbox" id="chinese" name="chinese" value="chinese">Chinese</label>
-                            <label for="mexican"><input type="checkbox" id="mexican" name="mexican" value="mexican">Mexican</label>
-                            <label for="japanese"><input type="checkbox" id="japanese" name="japanese" value="japanese">Japanese</label>
-                            <label for="indian"><input type="checkbox" id="indian" name="indian" value="indian">Indian</label>
-                            <label for="italian"><input type="checkbox" id="italian" name="italian" value="italian">Italian</label>
-                            <label for="korean"><input type="checkbox" id="korean" name="korean" value="korean">Korean</label>
-                            
-                        </form>
-                        <form id="locationForm">
-                            <label for="location">
-                                <p class="is-size-2">
-                                    Your Location
-                                </p>
-                            </label>
-                            <input class="input" id="location" type="text" placeholder="Enter a City or Zipcode">
-                        </form>
-                        <div class="buttons is-centered"></div>
-                        
+            <div class="column  bgColor has-text-centered foodSection">
+                <div class="box py-6">
+                    <form id="foodChoices">
+                        <h3>Choose your options:</h3>
+                        <input type="checkbox" id="american" name="american" value="american">
+                        <label for="american">American</label>
+                        <input type="checkbox" id="chinese" name="chinese" value="chinese">
+                        <label for="chinese">Chinese</label>
+                        <input type="checkbox" id="mexican" name="mexican" value="mexican">
+                        <label for="mexican">Mexican</label>
+                        <input type="checkbox" id="japanese" name="japanese" value="japanese">
+                        <label for="japanese">Japanese</label>
+                        <input type="checkbox" id="indian" name="indian" value="indian">
+                        <label for="indian">Indian</label>
+                        <input type="checkbox" id="italian" name="italian" value="italian">
+                        <label for="italian">Italian</label>
+                        <input type="checkbox" id="korean" name="korean" value="korean">
+                        <label for="korean">Korean</label>
+                    </form>
+                    <form id="locationForm">
+                        <label for="location">Search for food in your area</label>
+                        <input class="input" id="location" type="text" placeholder="Enter a City or Zipcode">
+                    </form>
+                    <div class="buttons is-centered">
+                        <button class="button is-success is-medium" id="generateFood"> Find Me Food</button>
                     </div>
-                
                 </div>
             </div>
     </div>
