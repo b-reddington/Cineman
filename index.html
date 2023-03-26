@@ -22,7 +22,7 @@
         </nav>
         <!-- Main content area one div for each column totaling 2 columns, using block elements and flex boxes-->
         <div class="columns">
-            <div class="column is-full-mobile is-half-desktop is-half-tablet green has-text-centered px-6">
+            <div class="column is-full-mobile is-half-desktop is-half-tablet bgColor has-text-centered px-6">
                 <div id="show-parameters" class="box">
                     <form id="type-form" class="block">
                         <label for="movie">Movie</label>
@@ -72,19 +72,19 @@
                         <label><input type="radio" name="platform" id="apple-tv" value="371">AppleTV+</label>
                     </form>
         
-                    <button type="submit" id="find-show" class="button is-success is-medium"> Find Show</button>
+                    <button type="submit" id="find-show" class="button is-link is-medium"> Find Show</button>
 
                     <div id="movie-results" class="">
                         <header>
                             <h3 class="selected-title is-size-4"></h3>
                         </header>
-                        <div class="columns">
-                            <div class="column">
+                        <div class="columns" style="max-height: 300px;">
+                            <div class="column is-one-third">
                                 <div class="img">
-                                    <img id="show-poster" src="" alt="poster of show">
+                                    <img id="show-poster" src="" alt="poster of show" class="image is-300x200">
                                 </div>
                             </div>
-                            <div class="column  is-size-4 has-text-left">
+                            <div class="column is-size-4 has-text-left">
                                 <div class="content-wrapper">
                                 <h4><span class="tv-rating"></span></h4>
                                 <h4><span class="release-yr"></span></h4>
@@ -116,10 +116,10 @@
                 
             </div>
 
-            <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered foodSection px-6">
+            <div class="column is-full-mobile is-half-desktop is-half-tablet bgColor has-text-centered foodSection px-6">
                 <div class="box">
                     <form id="foodChoices">
-                        <h3>Choose your options:</h3>
+                        <h3 class="is-size-2 py-1">Choose your options:</h3>
                         <input type="checkbox" id="american" name="american" value="american">
                         <label for="american">American</label>
                         <input type="checkbox" id="chinese" name="chinese" value="chinese">
@@ -140,8 +140,8 @@
                         <input class="input" id="location" type="text" placeholder="Enter a City or Zipcode">
                     </form>
                     <div class="buttons is-centered">
-                        <button class="button is-success is-medium" id="generateFood"> Find Me Food</button>
-                        <button class="button is-centered is-success is-medium"> Save Option</button>
+                        <button class="button is-link is-medium" id="generateFood"> Find Me Food</button>
+                        <button class="button is-centered is-link is-medium"> Save Option</button>
                     </div>
                     <div class="foodResults">
                         <h2 id="restaurantName"></h2>

@@ -17,6 +17,7 @@
 
 #movie-results {
     display: none;
+    
 }
 
 #invalid-msg {
@@ -27,8 +28,8 @@
     background-color: green;
 }
 
-.blue {
-    background-color: blueviolet;
+.bgColor {
+    background-color: rgb(66, 135, 245);
 }
 
 .teal {
@@ -62,8 +63,8 @@
     font-size: 20px;
 }
 .img{
-    height: 500px;
-    width: 300px;
+    height: 300px;
+    
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -78,6 +79,6 @@
     justify-content: left;
     
 }
-.box { 
-    height: 300px 
-};
+.content-wrapper{
+    text-align: left;
+}
