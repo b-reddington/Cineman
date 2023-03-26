@@ -56,6 +56,8 @@ function yelpApi() {
 $("#generateFood").click(function () {
     $(".foodResults img").remove(); // remove images when searcching for new restaurants to avoid creating multiple images
     yelpApi();
+    $('#foodResults').css('display', 'block');
+    
 });
 
 

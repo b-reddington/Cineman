@@ -49,6 +49,7 @@
 }
 
 .foodResults {
+    display:none;
     height: 500px;
     width: 300px;
     text-align: center;
@@ -77,3 +78,6 @@
     justify-content: left;
     
 }
+.box { 
+    height: 300px 
+};

@@ -22,7 +22,7 @@
         </nav>
         <!-- Main content area one div for each column totaling 2 columns, using block elements and flex boxes-->
         <div class="columns">
-            <div class="column is-full-mobile is-half-desktop is-half-tablet green has-text-centered">
+            <div class="column is-full-mobile is-half-desktop is-half-tablet green has-text-centered px-6">
                 <div id="show-parameters" class="box">
                     <form id="type-form" class="block">
                         <label for="movie">Movie</label>
@@ -33,110 +33,48 @@
                     </form>
                 
                     <form id="genre-form" class="block">
-                        
                         <label><input type="radio" name="genres" id="action" value="1">Action</label>
-                        
-                        
                         <label><input type="radio" name="genres" id="adventure" value="2">Adventure</label>
-                        
-                        
                         <label><input type="radio" name="genres" id="animation" value="3">Animation</label>
-                        
-                       
                         <label> <input type="radio" name="genres" id="anime" value="33">Anime</label>
-                        
-                        
                         <label><input type="radio" name="genres" id="biography" value="31">Biography</label>
-                        
-                       
                         <label> <input type="radio" name="genres" id="comedy" value="4">Comedy</label>
-                        
-                        
                         <label><input type="radio" name="genres" id="crime" value="5">Crime</label>
-                       
-                       
                         <label> <input type="radio" name="genres" id="documentary" value="6">Documentary</label>
-                        
-                       
                         <label> <input type="radio" name="genres" id="drama" value="7">Drama</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="family" value="8">Family</label>
-                       
                         <label><input type="radio" name="genres" id="fantasy" value="9"> Fantasy</label>
-                        
-                        
                         <label><input type="radio" name="genres" id="food" value="34">Food</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="game-show" value="28">Game Show</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="history" value="10">History</label>
-                        
-
                         <label><input type="radio" name="genres" id="horror" value="11">Horror</label>
-                      
-                        
                         <label><input type="radio" name="genres" id="kids" value="21">Kids</label>
-                        
-                        
                         <label><input type="radio" name="genres" id="music" value="12">Music</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="musical" value="32">Musical</label>
-                        
-                        
                         <label><input type="radio" name="genres" id="mystery" value="13">Mystery</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="nature" value="36">Nature</label>
-                      
-                        
                         <label><input type="radio" name="genres" id="romance" value="14">Romance</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="sci-fi" value="15">Sci-fi</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="soap" value="25">Soap</label>
-                    
-                       
                         <label> <input type="radio" name="genres" id="sports" value="29">Sports</label>
-                       
-                       
                         <label> <input type="radio" name="genres" id="thriller" value="17">Thriller</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="travel" value="35">Travel</label>
-                       
-                        
                         <label><input type="radio" name="genres" id="western" value="19">Western</label>
-                        
                     </form>
                 
                     <form id="platform-form" class="block">
-                        
                         <label><input type="radio" name="platform" id="hbo-max" value="387">HBO MAX</label>
-                       
                         <label><input type="radio" name="platform" id="netflix" value="203">Netflix</label>
-                        
-                        
                         <label><input type="radio" name="platform" id="hulu" value="157">Hulu</label>
-                       
-                        
                         <label><input type="radio" name="platform" id="amazon-prime" value="26">Amazon Prime</label>
                         
-                        
                         <label><input type="radio" name="platform" id="disney-pl" value="372">Disney+</label>
-                      
-                       
                         <label><input type="radio" name="platform" id="apple-tv" value="371">AppleTV+</label>
                     </form>
         
                     <button type="submit" id="find-show" class="button is-success is-medium"> Find Show</button>
 
-                    <div id="movie-results" class="card">
+                    <div id="movie-results" class="">
                         <header>
                             <h3 class="selected-title is-size-4"></h3>
                         </header>
@@ -146,7 +84,7 @@
                                     <img id="show-poster" src="" alt="poster of show">
                                 </div>
                             </div>
-                            <div class="column card-content is-size-4 has-text-left">
+                            <div class="column  is-size-4 has-text-left">
                                 <div class="content-wrapper">
                                 <h4><span class="tv-rating"></span></h4>
                                 <h4><span class="release-yr"></span></h4>
@@ -178,8 +116,8 @@
                 
             </div>
 
-            <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered foodSection">
-                <div class="box py-6">
+            <div class="column is-full-mobile is-half-desktop is-half-tablet blue has-text-centered foodSection px-6">
+                <div class="box">
                     <form id="foodChoices">
                         <h3>Choose your options:</h3>
                         <input type="checkbox" id="american" name="american" value="american">
