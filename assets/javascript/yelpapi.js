@@ -77,3 +77,9 @@ $("#generateFood").click(function () {
     $('.foodResults').css('display', 'block');
     yelpApi();
 });
+$("#generatePair").click(function () {
+    $(".foodResults img").remove(); // remove images when searcching for new restaurants to avoid creating multiple images
+    $("#saveFood").remove();
+    $('.foodResults').css('display', 'block');
+    yelpApi();
+});
