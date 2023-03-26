@@ -133,8 +133,8 @@ function renderShow() {
                 $('#show-poster').attr('src', selectedPoster);
             };
 
-            if (data.us_rating === "") {
-                $('.tv-rating').css('display', 'none');
+            if (data.us_rating === null) {
+                $('.rated').css('display', 'none');
             } else {
                 $('.tv-rating').text(data.us_rating);
             };
@@ -155,6 +155,12 @@ function renderShow() {
                 $('.runtime').css('display', 'none');
             } else {
                 $('.show-minutes').text(data.runtime_minutes);
+            };
+
+            if (data.trailer === null) {
+                $('.watch-trailer').css('display', 'none');
+            } else {
+                $('.trailer-link').attr('href', data.trailer)
             };
 
             if (data.plot_overview === null) {
