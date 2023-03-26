@@ -133,8 +133,8 @@ function renderShow() {
                 $('#show-poster').attr('src', selectedPoster);
             };
 
-            if (data.us_rating === "") {
-                $('.tv-rating').css('display', 'none');
+            if (data.us_rating === null) {
+                $('.rated').css('display', 'none');
             } else {
                 $('.tv-rating').text(data.us_rating);
             };
@@ -151,13 +151,19 @@ function renderShow() {
                 $('.ratings').text(data.user_rating);
             };
 
-            if (data.runtime_minutes === '') {
-                $('.show-minutes').css('display', 'none');
+            if (data.runtime_minutes === null) {
+                $('.runtime').css('display', 'none');
             } else {
                 $('.show-minutes').text(data.runtime_minutes);
             };
 
-            if (data.plot_overview === '') {
+            if (data.trailer === null) {
+                $('.watch-trailer').css('display', 'none');
+            } else {
+                $('.trailer-link').attr('href', data.trailer)
+            };
+
+            if (data.plot_overview === null) {
                 $('.show-summary').css('display', 'none');
             } else {
                 $('.show-summary').text(data.plot_overview);
@@ -166,31 +172,30 @@ function renderShow() {
 };
 
 //click event -- 'submit', render movie onto page
-$('#generate').click(function(event) {
+$('#find-show').click(function(event) {
     event.preventDefault;
 
     resetResults();
 
     setTimeout(function() {
         searchTitles();
-    }, 50);
+    }, 3000);
 });
-$('#generateMovie').click(function(event) {
-    event.preventDefault;
-    console.log("regen")
-    resetResults();
 
-    setTimeout(function() {
-        searchTitles();
-    }, 50);
+//click event -- uncheck options
+$('#uncheck').click(function(event) {
+    event.preventDefault;
+
+    $('input[type=radio]').prop('checked', false);
 });
+
 //click event -- save show to local storage
 $('#save-show').click(function(event) {
     event.preventDefault;
 
     localStorage.setItem('showTitle', selectedTitle);
     localStorage.setItem('showPoster', selectedPoster);
-    console.log(selectedTitle)
+
     var savedShow = {
         showTitle: selectedTitle,
         showPoster: selectedPoster
