@@ -182,7 +182,7 @@ $('#save-show').click(function(event) {
 
     localStorage.setItem('showTitle', selectedTitle);
     localStorage.setItem('showPoster', selectedPoster);
-
+    console.log(selectedTitle)
     var savedShow = {
         showTitle: selectedTitle,
         showPoster: selectedPoster

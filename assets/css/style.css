@@ -19,7 +19,12 @@
     display: none;
     
 }
-
+body{
+    background-color: rgb(66, 135, 245);
+}
+html{
+    background-color: rgb(66, 135, 245);
+}
 #invalid-msg {
     display: none;
 }
@@ -36,9 +41,7 @@
     background-color: teal;
 }
 
-.foodSection {
-    height: 100vh;
-}
+
 
 #locationForm {
     margin-top: 20px;
@@ -82,3 +85,9 @@
 .content-wrapper{
     text-align: left;
 }
+
+.logoImage{
+    border-radius: 50%;
+}
+
+
