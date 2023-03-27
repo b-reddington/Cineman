@@ -128,7 +128,12 @@ html{
     font-size: 20px;
     text-transform: capitalize;
 }
-
+#foodImg{
+    height:20rem;
+}
+#movieImg{
+    height:20rem;
+}
 /*
 }
 .img{
@@ -152,8 +157,9 @@ html{
     text-align: left;
 }
 
+
+
+*/
 .logoImage{
     border-radius: 50%;
 }
-
-*/

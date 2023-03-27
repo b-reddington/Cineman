@@ -260,32 +260,19 @@
                     <div class="columns">
                         <div class="column">
                             <div id="movie-results" class="card">
-                                <header>
-                                    <h3 class="selected-title"></h3>
-                                </header>
-                                <div class="columns">
-                                    <div class="column">
-                                        <div class="img">
-                                            <img id="show-poster" src="" alt="poster of show">
-                                        </div>
-                                    </div>
 
-                                    <div class="column card-content has-text-left">
-                                        <div class="columns">
-                                            <div class="column has-text-centered">
-                                                <h4><span class="release-yr"></span></h4>
-                                                <h4><span class="ratings"></span></h4>
-                                            </div>
-                                            <div class="column has-text-centered">
-                                                <h4><span class="tv-rating"></span></h4>
-                                                <h4><span class="show-minutes"></span></h4>
-                                            </div>
+                                        <div class="img">
+                                            <img class="movieImg" id="show-poster" src="" alt="poster of show">
                                         </div>
-                                        <div class="block">
-                                            <p class="show-summary"></p>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                <header>
+                                    <h3 class="selected-title is-size-3"></h3>
+                                    <h4><span class="release-yr"></span></h4>
+                                    <h4><span class="ratings"></span></h4>
+                                    <h4><span class="tv-rating"></span></h4>
+                                    <h4><span class="show-minutes"></span></h4>
+                                </header>
+                                
 
                                 <footer>
                                     <p><span>Results brought to you by:</span> <a href="https://www.watchmode.com/">Watchmode</a></p>
@@ -313,9 +300,10 @@
                                         <h3 id="restaurantType"></h3>
                                         <h3 id="restaurantRating"></h3>
                                         <h3 id="restaurantPrice"></h3>
-                                    </div>
                                     <button id="save-show" class="button is-success is-medium mb-5 ">Save</button>
                                     <button type="submit" id="generateMovie" class="button is-link is-medium has-text-centered "> Regen!</button>
+                                    </div>
+                                    
                             </div>
                         </div>
                     </div>
