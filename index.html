@@ -248,41 +248,36 @@
                     </form>
                     
                     <div class="field is-grouped">
-                        <button type="submit" id="generatePair" class="button is-link is-medium has-text-centered "> Find Pairing!</button>
-                        <button id="uncheck" class="button is-success is-medium">Clear Selections</button>
+                        <button type="submit" id="generatePair" class="button is-success is-medium has-text-centered is-responsive"> Find Pairing!</button>
+                        <button id="uncheck" class="button is-danger is-medium is-responsive">Clear Selections</button>
                     </div>
                 </div>
             </div>
             
             <!-- result section -->
             <div class="column bgColor">
-                <div class="box py-6">
+                <div class="box" id="resultBox">
+                    <h1 class="is-size-3 has-text-centered resultTitle">Results Will Be Generated Here</h1>
                     <div class="columns">
                         <div class="column">
-                            <div id="movie-results" class="card">
-                                <header>
-                                    <h3 class="selected-title"></h3>
-                                </header>
-                                <div class="img">
-                                    <img id="show-poster" src="" alt="poster of show">
-                                </div>
+                            <div id="movie-results" class="card is-paddingless">
+                                    <img class='movieImg'id="show-poster" src="" alt="poster of show">
+                                <div class="card-content has-text-centered is-paddingless">
 
-                                <div class="card-content has-text-left">
-                                    <div class="columns is-mobile">
-                                        <div class="column has-text-centered">
+                                            <header>
+                                                <h3 class="selected-title"></h3>
+                                            </header>
                                             <h4><span class="release-yr"></span></h4>
                                             <h4><span class="ratings"></span></h4>
-                                        </div>
-                                        <div class="column has-text-centered">
                                             <h4><span class="tv-rating"></span></h4>
-                                            <h4><span class="show-minutes"></span></h4>
-                                        </div>
-                                    </div>
+                                            <h4><span class="show-minutes"></span></h4>  
                                 </div>
                                 <footer>
-                                    <p><span>Results brought to you by:</span> <a href="https://www.watchmode.com/">Watchmode</a></p>
-
-                                    <button id="save-show" class="button is-success is-medium mb-5">Save</button>
+                                    
+                                    <div class="box has-text-centered">
+                                    <button type="submit" id="generateMovie" class="button is-link is-medium has-text-centered is-responsive"> Regen!</button>
+                                    
+                                    </div>
                                 </footer>
                             </div>
                             
@@ -297,21 +292,24 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="column is-12-mobile">
-                            <div class="foodResults">
+                            <div class="foodResults card">
                                     <div class="box">
+                                        
                                         <h2 id="restaurantName"></h2>
                                         <h3 id="restaurantType"></h3>
                                         <h3 id="restaurantRating"></h3>
                                         <h3 id="restaurantPrice"></h3>
+                                        
+                                        <button type="submit" id="generateFood" class="button is-link is-medium has-text-centered is-responsive"> Regen!</button>
                                     </div>
-                                    <button id="save-show" class="button is-success is-medium mb-5 ">Save</button>
-                                    <button type="submit" id="generateMovie" class="button is-link is-medium has-text-centered "> Regen!</button>
+                                    
                             </div>
+                            
                         </div>
+                        
                     </div>
-                    
+                    <button id="save-show" class="button is-info is-medium mb-5 has-text-centered">Save</button>
                 </div>
             </div>
                     </div>
@@ -321,7 +319,7 @@
 
     <main>
         <!--Previous pictures box above the two columns that contains a container that contains a thumbnail for the movie, the restaurant, and the date-->
-        <!-- Hidden until Needed -->
+        <!-- Hidden until Need  ed -->
         <!-- <div class="box is-full teal py-6">
             <h2><strong>Previous Pairs</strong></h2>
             <div class="block">
