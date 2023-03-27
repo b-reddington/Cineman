@@ -1,30 +1,16 @@
-/*
-@media screen and (max-width: 1024px) {
- #burger{display:none} 
- .navbar, .navbar-end, .navbar-menu, .navbar-start {
-    align-items: stretch;
-    display: flex;
-}
- }
 
-@media screen and (max-width: 768px) {
-    .navbar-menu {
-        display: none;
-    }
-    #burger{display:flex}
+
+.logoImage{
+    border-radius: 50%;
+    max-width: 10vh;
 }
-*/
+
 body{
     background-color: rgb(66, 135, 245);
 }
-html{
-    background-color: rgb(66, 135, 245);
+.container{
+    min-height:100vh;
 }
-
-.bgColor {
-    background-color: rgb(66, 135, 245);
-}
-
 /* forms */
 #type-form {
     display: flex;
@@ -36,6 +22,8 @@ html{
 #foodChoices h3 {
     margin-bottom: 10px;
     text-align: center;
+    font-size:1.5rem;
+    margin-top: 20px;
 }
 
 #type-form, #genre-form, #platform-form, #foodChoices, #locationForm {
@@ -68,32 +56,23 @@ html{
 
 #movie-results header {
     text-align: center;
-    margin-bottom: 20px;
+    
 }
-
+#movie-results h4{
+    font-size:20px;
+}
+#movie-results h3{
+    font-size:24px;
+}
 #movie-results #show-poster {
     display: block;
     margin: 0 auto;
-    max-height: 300px;
-    max-width: auto;
-}
-
-#movie-results .watch-trailer {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#movie-results .trailer-link {
-    color: inherit;
-}
-
-#movie-results footer {
-    margin-top: 45px;
+    width:75%;
 }
 
 #movie-results footer p {
     text-align: center;
-    margin-bottom: 25px;
+    
 }
 
 #movie-results footer a {
@@ -116,12 +95,10 @@ html{
 
 .foodResults {
     display: none;
-    height: 500px;
-    width: 300px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    font-size: 24px;
+    font-size: 24px;    
 }
 
 .foodResults h3 {
@@ -129,31 +106,8 @@ html{
     text-transform: capitalize;
 }
 
-/*
+#save-show {
+    visibility:hidden;
+    display: block;
+    margin: 0 auto;
 }
-.img{
-    height: 300px;
-    
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 24px;
-    
-}
-#genre-form label, #platform-form label{
-    display: inline-block;
-}
-.card-content{
-    display: flex;
-    justify-content: left;
-    
-}
-.content-wrapper{
-    text-align: left;
-}
-
-.logoImage{
-    border-radius: 50%;
-}
-
-*/

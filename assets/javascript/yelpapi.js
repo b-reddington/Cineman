@@ -87,3 +87,11 @@ $("#generatePair").click(function () {
     yelpApi();
 
 });
+$("#generateFood").click(function () {
+    $(".foodResults img").remove(); // remove images when searching for new restaurants to avoid creating multiple images
+    $("#order").remove(); // remove button to avoid duplicate buttons from appearing
+    $("#saveFood").remove(); // remove button to avoid duplicate buttons from appearing
+    $('.foodResults').css('display', 'block');
+    yelpApi();
+
+});

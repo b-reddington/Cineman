@@ -10,11 +10,11 @@ var PlatformsCheckEl = $("input[name='platform']");
 //variables
 var formComplete = false;
 var options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '872e03d86emsh692dc8617ff8678p13f059jsn5c1a993e895f',
-        'X-RapidAPI-Host': 'watchmode.p.rapidapi.com'
-    }
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '39755327ccmsh47fb34c6b77b4c4p1156dcjsn89b7a5a0e3d0',
+		'X-RapidAPI-Host': 'watchmode.p.rapidapi.com'
+	}
 };
 var selectedMovieId;
 
@@ -169,7 +169,15 @@ $('#generatePair').click(function(event) {
         searchTitles();
     }, 3000);
 });
+$('#generateMovie').click(function(event) {
+    event.preventDefault;
+    console.log("movieregen")
+    resetResults();
 
+    setTimeout(function() {
+        searchTitles();
+    }, 60);
+});
 //click event -- uncheck options
 $('#uncheck').click(function(event) {
     event.preventDefault;
@@ -180,7 +188,7 @@ $('#uncheck').click(function(event) {
 //click event -- save show to local storage
 $('#save-show').click(function(event) {
     event.preventDefault;
-
+    console.log('testingmovie');
     localStorage.setItem('showTitle', selectedTitle);
     localStorage.setItem('showPoster', selectedPoster);
 
