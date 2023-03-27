@@ -156,32 +156,10 @@ function renderShow() {
             } else {
                 $('.show-minutes').text(data.runtime_minutes);
             };
-
-            if (data.trailer === null) {
-                $('.watch-trailer').css('display', 'none');
-            } else {
-                $('.trailer-link').attr('href', data.trailer)
-            };
-
-            if (data.plot_overview === null) {
-                $('.show-summary').css('display', 'none');
-            } else {
-                $('.show-summary').text(data.plot_overview);
-            };
         })
 };
 
 //click event -- 'submit', render movie onto page
-$('#find-show').click(function(event) {
-    event.preventDefault;
-
-    resetResults();
-
-    setTimeout(function() {
-        searchTitles();
-    }, 3000);
-});
-
 $('#generatePair').click(function(event) {
     event.preventDefault;
 

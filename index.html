@@ -24,8 +24,8 @@
         <!-- Main content area one div for each column totaling 2 columns, using block elements and flex boxes-->
     </header>
     <div class="container">
-        <div class="columns is-mobile">
-            <div class="column is-two-fifths is-mobile bgColor">
+        <div class="columns">
+            <div class="column is-two-fifths bgColor">
                 <div id="show-parameters" class="box">
                     <form id="type-form" class="block">
                         <div>
@@ -41,7 +41,7 @@
                     <form id="genre-form" class="block">
                         <h3>Pick a genre:</h3>
                         
-                        <div class="genre-input columns">
+                        <div class="genre-input columns is-mobile">
                             <div class="column">
                                 <div>
                                     <input type="radio" name="genres" id="action" value="1">
@@ -165,7 +165,7 @@
                     <form id="platform-form" class="block">
                         <h3>Pick a streaming service:</h3>
 
-                        <div class="platform-input columns">
+                        <div class="platform-input columns is-mobile">
                             <div  class="column">
                                 <div>
                                     <input type="radio" name="platform" id="hbo-max" value="387">
@@ -202,7 +202,7 @@
                     <form id="foodChoices">
                         <h3>Choose your options:</h3>
 
-                        <div class="columns">
+                        <div class="columns is-mobile">
                             <div class="column">
                                 <div>
                                     <input type="radio" id="american" name="foodChoice" value="american">
@@ -263,30 +263,22 @@
                                 <header>
                                     <h3 class="selected-title"></h3>
                                 </header>
-                                <div class="columns">
-                                    <div class="column">
-                                        <div class="img">
-                                            <img id="show-poster" src="" alt="poster of show">
-                                        </div>
-                                    </div>
+                                <div class="img">
+                                    <img id="show-poster" src="" alt="poster of show">
+                                </div>
 
-                                    <div class="column card-content has-text-left">
-                                        <div class="columns">
-                                            <div class="column has-text-centered">
-                                                <h4><span class="release-yr"></span></h4>
-                                                <h4><span class="ratings"></span></h4>
-                                            </div>
-                                            <div class="column has-text-centered">
-                                                <h4><span class="tv-rating"></span></h4>
-                                                <h4><span class="show-minutes"></span></h4>
-                                            </div>
+                                <div class="card-content has-text-left">
+                                    <div class="columns is-mobile">
+                                        <div class="column has-text-centered">
+                                            <h4><span class="release-yr"></span></h4>
+                                            <h4><span class="ratings"></span></h4>
                                         </div>
-                                        <div class="block">
-                                            <p class="show-summary"></p>
+                                        <div class="column has-text-centered">
+                                            <h4><span class="tv-rating"></span></h4>
+                                            <h4><span class="show-minutes"></span></h4>
                                         </div>
                                     </div>
                                 </div>
-
                                 <footer>
                                     <p><span>Results brought to you by:</span> <a href="https://www.watchmode.com/">Watchmode</a></p>
 
@@ -295,7 +287,7 @@
                             </div>
                             
                             <div id="invalid-msg" class="card">
-                                <div class="card-content columns">
+                                <div class="card-content columns is-mobile">
                                     <div class="column is-one-quarter">
                                         <img src="./assets/images/error-icon.svg" alt="error">
                                     </div>
