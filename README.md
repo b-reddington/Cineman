@@ -44,7 +44,7 @@ How to Use:
 * The app/website will generate a random movie per selections and a nearby restaurant based on your choices of cuisine, while also providing ratings. 
 
 On the homepage, you will see two buttons labeled "Find Pairing" and "Save Selection".
-Clicking on "Find Pairing" will randomly select a movie from a pre-defined list of options and display it on the page, as well as a restaurant from a pre-defined list of options and display it on the page..
+Clicking on "Find Pairing" will randomly select a movie from a pre-defined list of options and display it on the page, as well as a restaurant from a pre-defined list of options and display it on the page. You may also click "Regen!" for movies and shows or restaurants to shuffle options. 
 
 If you are not satisfied with the random selection, you can click the button again to generate a new random choice.
 The app uses local storage to remember your saved selected movie and restaurant, so you can revisit the page and see your previous choices.
