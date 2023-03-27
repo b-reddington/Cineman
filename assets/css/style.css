@@ -14,30 +14,40 @@
     #burger{display:flex}
 }
 */
+body{
+    background-color: rgb(66, 135, 245);
+}
+html{
+    background-color: rgb(66, 135, 245);
+}
 
-/* movie section edits by Grace */
+/* form */
 #type-form {
-    /* border: 1px solid red; */
     display: flex;
     justify-content: space-evenly;
 }
 
-#type-form, #genre-form, #platform-form {
-    padding: 15px;
-    margin-bottom: 5px;
-}
-
-#type-form label, #genre-form label, #platform-form label{
-    margin-left: 5px;
-}
-
 #genre-form h3,
-#platform-form h3 {
+#platform-form h3,
+#foodChoices h3 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-#find-show, #uncheck {
+#type-form, #genre-form, #platform-form, #foodChoices, #locationForm {
+    padding: 15px;
+    margin-bottom: 5px;
+}
+
+#type-form label, #genre-form label, #platform-form label, #foodChoices label {
+    margin-left: 5px;
+}
+
+#locationForm label {
+    margin-bottom: 5px;
+}
+
+#generatePair, #uncheck {
     display: block;
     margin: 20px auto 5px;
 }
@@ -50,12 +60,6 @@
 #movie-results {
     display: none;
     
-}
-body{
-    background-color: rgb(66, 135, 245);
-}
-html{
-    background-color: rgb(66, 135, 245);
 }
 
 /*
@@ -109,28 +113,15 @@ html{
 
 /* end of edits by Grace */
 
-.green {
-    background-color: green;
-}
 
 .bgColor {
     background-color: rgb(66, 135, 245);
 }
 
-.teal {
-    background-color: teal;
-}
 
 
 
-#locationForm {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 
-#location {
-    width: 30%;
-}
 
 .foodResults {
     display:none;
