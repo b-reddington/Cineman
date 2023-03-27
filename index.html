@@ -37,10 +37,10 @@
                             <label for="tv-series">TV series</label>
                         </div>
                     </form>
-                
+
                     <form id="genre-form" class="block">
                         <h3>Pick a genre:</h3>
-                        
+
                         <div class="genre-input columns is-mobile">
                             <div class="column">
                                 <div>
@@ -161,12 +161,12 @@
                             </div>
                         </div>
                     </form>
-                
+
                     <form id="platform-form" class="block">
                         <h3>Pick a streaming service:</h3>
 
                         <div class="platform-input columns is-mobile">
-                            <div  class="column">
+                            <div class="column">
                                 <div>
                                     <input type="radio" name="platform" id="hbo-max" value="387">
                                     <label for="hbo-max">HBO MAX</label>
@@ -174,10 +174,10 @@
                                 <div>
                                     <input type="radio" name="platform" id="netflix" value="203">
                                     <label for="netflix">Netflix</label>
-                                </div>                        
+                                </div>
                             </div>
 
-                            <div class="column">                        
+                            <div class="column">
                                 <div>
                                     <input type="radio" name="platform" id="hulu" value="157">
                                     <label for="hulu">Hulu</label>
@@ -200,7 +200,7 @@
                     </form>
 
                     <form id="foodChoices">
-                        <h3>Choose your options:</h3>
+                        <h3>Pick your food!</h3>
 
                         <div class="columns is-mobile">
                             <div class="column">
@@ -239,21 +239,50 @@
                                     <label for="korean">Korean</label>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </form>
 
                     <form id="locationForm">
                         <label for="location">Search for food in your area</label>
                         <input class="input" id="location" type="text" placeholder="Enter City or Zipcode">
                     </form>
-                    
+
                     <div class="field is-grouped">
-                        <button type="submit" id="generatePair" class="button is-success is-medium has-text-centered is-responsive"> Find Pairing!</button>
+                        <button type="submit" id="generatePair"
+                            class="button is-success is-medium has-text-centered is-responsive"> Find Pairing!</button>
                         <button id="uncheck" class="button is-danger is-medium is-responsive">Clear Selections</button>
+                    </div>
+                    <button class="js-modal-trigger is-warning is-light button is-medium is-responsive is-center"
+                        data-target="modal-js-example">
+                        View Saved Results
+                    </button>
+                    <div id="modal-js-example" class="modal">
+                        <div class="modal-background"></div>
+
+                        <div class="modal-content">
+                            <div class="box">
+                                <!-- Start of the card -->
+                                <div class="card savedData">
+                                    <div class="card-header-title">
+                                        <p class="title">Previously Saved</p>
+                                        </div>
+                                        <div class="card-content">
+                                        <p class="subtitle movieName"></p>
+                                        <p class="subtitle restaurantName"></p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="button is-danger is-centered is-full" id="removeSave">Remove</button>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="modal-close is-large" aria-label="close"></button>
                     </div>
                 </div>
             </div>
-            
+
             <!-- result section -->
             <div class="column bgColor">
                 <div class="box" id="resultBox">
@@ -261,85 +290,81 @@
                     <div class="columns">
                         <div class="column">
                             <div id="movie-results" class="card is-paddingless">
-                                    <img class='movieImg'id="show-poster" src="" alt="poster of show">
+                                <img class='movieImg' id="show-poster" src="" alt="poster of show">
                                 <div class="card-content has-text-centered is-paddingless">
 
-                                            <header>
-                                                <h3 class="selected-title"></h3>
-                                            </header>
-                                            <h4><span class="release-yr"></span></h4>
-                                            <h4><span class="ratings"></span></h4>
-                                            <h4><span class="tv-rating"></span></h4>
-                                            <h4><span class="show-minutes"></span></h4>  
+                                    <header>
+                                        <h3 class="selected-title"></h3>
+                                    </header>
+                                    <h4><span class="release-yr"></span></h4>
+                                    <h4><span class="ratings"></span></h4>
+                                    <h4><span class="tv-rating"></span></h4>
+                                    <h4><span class="show-minutes"></span></h4>
                                 </div>
                                 <footer>
-                                    
+
                                     <div class="box has-text-centered">
-                                    <button type="submit" id="generateMovie" class="button is-link is-medium has-text-centered is-responsive"> Regen!</button>
-                                    
+                                        <button type="submit" id="generateMovie"
+                                            class="button is-link is-medium has-text-centered is-responsive">
+                                            Regen!</button>
+
                                     </div>
                                 </footer>
                             </div>
-                            
+
                             <div id="invalid-msg" class="card">
                                 <div class="card-content columns is-mobile">
                                     <div class="column is-one-quarter">
                                         <img src="./assets/images/error-icon.svg" alt="error">
                                     </div>
                                     <div class="column has-text-left">
-                                        <p>It seems that there are no shows that match your criteria. Please try again!</p>
+                                        <p>It seems that there are no shows that match your criteria. Please try again!
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="column is-12-mobile">
                             <div class="foodResults card">
-                                    <div class="box is-marginless">
-                                        
-                                        <h2 id="restaurantName"></h2>
-                                        <h3 id="restaurantType"></h3>
-                                        <h3 id="restaurantRating"></h3>
-                                        <h3 id="restaurantPrice"></h3>
-                                        
-                                    </div>
+                                <div class="box is-marginless">
 
-                                    <footer>
-                                    
-                                        <div class="box has-text-centered">
-                                        <button type="submit" id="generateFood" class="button is-link is-medium has-text-centered is-responsive"> Regen!</button>
-                                        
-                                        </div>
-                                    </footer>        
+                                    <h2 id="restaurantName"></h2>
+                                    <h3 id="restaurantType"></h3>
+                                    <h3 id="restaurantRating"></h3>
+                                    <h3 id="restaurantPrice"></h3>
+                                    <div class="afterBtns"></div>
+
+                                </div>
+
+                                <footer>
+
+                                    <div class="box has-text-centered">
+                                        <button type="submit" id="generateFood"
+                                            class="button is-link is-medium has-text-centered is-responsive">
+                                            Regen!</button>
+
+                                    </div>
+                                </footer>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                     <button id="save-show" class="button is-info is-medium mb-5 has-text-centered">Save</button>
                 </div>
             </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
-    <main>
-        <!--Previous pictures box above the two columns that contains a container that contains a thumbnail for the movie, the restaurant, and the date-->
-        <!-- Hidden until Need  ed -->
-        <!-- <div class="box is-full teal py-6">
-            <h2><strong>Previous Pairs</strong></h2>
-            <div class="block">
-                This will contain a history of pairs.
-            </div>
-        </div> -->
-        <!--Insert scripts Below this line-->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-            integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-        <script src="./assets/javascript/script.js"></script>
-        <script src="./assets/javascript/select-movie.js"></script>
-        <script src="./assets/javascript/yelpapi.js"></script>
-    </main>
+    <!--Insert scripts Below this line-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/script.js"></script>
+    <script src="./assets/javascript/select-movie.js"></script>
+    <script src="./assets/javascript/yelpapi.js"></script>
 
 </body>
 
