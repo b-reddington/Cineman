@@ -160,16 +160,6 @@ function renderShow() {
 };
 
 //click event -- 'submit', render movie onto page
-$('#find-show').click(function(event) {
-    event.preventDefault;
-
-    resetResults();
-
-    setTimeout(function() {
-        searchTitles();
-    }, 3000);
-});
-
 $('#generatePair').click(function(event) {
     event.preventDefault;
 
