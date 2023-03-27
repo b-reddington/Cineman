@@ -64,7 +64,7 @@ body{
 #movie-results h3{
     font-size:24px;
 }
-#movie-results #show-poster {
+#movie-results #show-poster, #foodImg {
     display: block;
     margin: 0 auto;
     width:75%;
@@ -110,4 +110,9 @@ body{
     visibility:hidden;
     display: block;
     margin: 0 auto;
+}
+#foodImg{
+    display: block;
+    margin: 0 auto;
+    width:75%;
 }
