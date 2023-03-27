@@ -1,7 +1,8 @@
 
 $("#generatePair").click(function (event) {
-   console.log("scriptaccess")
- event.preventDefault
- $('#save-show').css('visibility', 'visible');
+
+    event.preventDefault;
+    $('.resultTitle').css('display','none');
+    $('#save-show').css('visibility', 'visible');
 
 });
