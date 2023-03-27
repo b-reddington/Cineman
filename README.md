@@ -9,7 +9,8 @@ Features a User-friendly interface that is easy to navigate and the ability to s
 
 Cineman is a one-stop-shop for anyone looking to make the perfect movie and meal pairing. With its simple user interface, users can quickly and easily find a great movie or show to watch and a delicious meal to enjoy. Download the app today and take the guesswork out of your next movie night!
 
-<!-- Insert Photo of final design here -->
+![Click for Preview](assets/images/cinemanscreenshot.jpg)
+
 
 ## Installation
 
