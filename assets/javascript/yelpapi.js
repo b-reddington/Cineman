@@ -1,3 +1,4 @@
+
 function yelpApi() {
     // Set Up the API endpoint and parameters
     const url = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search';
@@ -41,15 +42,10 @@ function yelpApi() {
             $("#restaurantType").text(selectedFoods);  // Displays Selected Business Rating
             $("#restaurantRating").text("Rating: " + business.rating + "/5");  // Displays Selected Business Rating
             $("#restaurantPrice").text("Average Price: " + business.price); // Displays Selected Business Price Range
-
             let navButton = $("<button>");
             navButton.text("Order from Here");
             navButton.attr("id", "order");
-
-            navButton.attr("class", "button is-centered is-success is-medium")
-
-
-
+            navButton.attr("class", "button is-centered is-danger is-small")
             $(".afterBtns").append(navButton)
             $('#order').click(function () {
                 window.open(business.url, '_blank');
@@ -62,16 +58,10 @@ function yelpApi() {
                 rating: business.rating,
                 price: business.price
             };
-            const stringInfo = JSON.stringify(savedInfo); // Converts saved data as a string
-            let saveButton = $("<button>");
-            saveButton.text("Save Results");
-            saveButton.attr("id", "saveFood");
-
-            saveButton.attr("class", "button is-centered is-success is-medium");
-
-            $(".afterBtns").append(saveButton)
-            $("#saveFood").click(function () {
-                localStorage.setItem('Generated Food', stringInfo);
+            const stringInfo = JSON.stringify(savedInfo) || []; // Converts saved data as a string
+            $("#save-show").click(function () {
+                localStorage.setItem('generatedFood', stringInfo);
+                localStorage.setItem('restaurant', savedInfo.name)
             })
 
         })
