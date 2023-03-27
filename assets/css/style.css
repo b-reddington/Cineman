@@ -21,7 +21,11 @@ html{
     background-color: rgb(66, 135, 245);
 }
 
-/* form */
+.bgColor {
+    background-color: rgb(66, 135, 245);
+}
+
+/* forms */
 #type-form {
     display: flex;
     justify-content: space-evenly;
@@ -35,7 +39,6 @@ html{
 }
 
 #type-form, #genre-form, #platform-form, #foodChoices, #locationForm {
-    padding: 15px;
     margin-bottom: 5px;
 }
 
@@ -52,17 +55,17 @@ html{
     margin: 20px auto 5px;
 }
 
+/* results */
+
 #movie-results, #invalid-msg {
     padding: 35px;
-    margin-top: 45px;
 }
 
 #movie-results {
-    display: none;
-    
+    display: none; 
 }
 
-/*
+
 #movie-results header {
     text-align: center;
     margin-bottom: 20px;
@@ -101,7 +104,7 @@ html{
     display: block;
     margin: 0 auto;
 }
-*/
+
 #invalid-msg {
     display: none;
     text-align: center;
@@ -111,20 +114,8 @@ html{
     padding: 0;
 }
 
-/* end of edits by Grace */
-
-
-.bgColor {
-    background-color: rgb(66, 135, 245);
-}
-
-
-
-
-
-
 .foodResults {
-    display:none;
+    display: none;
     height: 500px;
     width: 300px;
     text-align: center;
