@@ -144,6 +144,9 @@ html{
 
 .foodResults h3 {
     font-size: 20px;
+    text-transform: capitalize;
+}
+
 /*
 }
 .img{

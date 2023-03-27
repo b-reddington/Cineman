@@ -10,7 +10,7 @@ function yelpApi() {
         delivery: 'restaurants_delivery', // Select restaurants that offer delivery
     }
     let selectedFoods = [];
-
+    
     function isChecked() {
         for (i = 0; i < select.foods.length; i++) {
             select.foodSplit.push(select.foods[i].split(' '));
@@ -80,13 +80,10 @@ function yelpApi() {
 
 
 $("#generatePair").click(function () {
-    $(".foodResults img").remove(); // remove images when searcching for new restaurants to avoid creating multiple images
-    $("#saveFood").remove();
-    $('.foodResults').css('display', 'block');
-    yelpApi();
-
+    $(".foodResults img").remove(); // remove images when searching for new restaurants to avoid creating multiple images
     $("#order").remove(); // remove button to avoid duplicate buttons from appearing
     $("#saveFood").remove(); // remove button to avoid duplicate buttons from appearing
+    $('.foodResults').css('display', 'block');
     yelpApi();
 
 });
